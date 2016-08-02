@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootswatch: Flatly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./bootstrap.css" media="screen">
+    <link rel="stylesheet" href="custom.min.css">
+    <link rel="stylesheet" href="flipclock/css/flipclock.css">
+
+      <style>
+
+          /* ======= Footer ======= */
+          footer {
+              color: #fff;
+          }
+
+          footer h3 {
+              margin-bottom: 30px;
+          }
+
+          footer .footer-above {
+              padding-top: 50px;
+              background-color: #2c3e50;
+          }
+
+          footer .footer-col {
+              margin-bottom: 50px;
+          }
+
+          footer .footer-below {
+              padding: 25px 0;
+              background-color: #233140;
+          }
+
+          .btn-social {
+              display: inline-block;
+              width: 50px;
+              height: 50px;
+              border: 2px solid #fff;
+              border-radius: 100%;
+              text-align: center;
+              font-size: 20px;
+              line-height: 45px;
+          }
+
+          .btn:focus,
+          .btn:active,
+          .btn.active {
+              outline: 0;
+          }
+
+
+
+      </style>
+
+
+    <style>
+
+        .btn-default {
+            background-color: transparent;
+        }
+
+        #particler-instance{
+            height: calc(100% - 80px);
+            height: -webkit-calc(100% - 80px);
+            height: -moz-calc(100% - 80px);
+            max-height: 100%;
+        }
+        html, body {
+            height: 100%;
+            background-color: #2c3e50;
+        }
+        .fill
+        {
+            box-sizing: border-box;
+            width: 100%;
+            height: calc(100% - 80px);
+            height: -webkit-calc(100% - 80px);
+            height: -moz-calc(100% - 80px);
+        }
+        .navbar {
+            background-color: transparent;
+            border: transparent;
+            color: #F16664;
+            position: relative;
+            height: 10px;
+
+        }
+        .nav.navbar-nav li a {
+            color: #F16664;
+        }
+        .dropdown-menu{
+            background-color: transparent;
+            border: transparent;
+            box-shadow: none;
+        }
+        .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+            background-color: transparent;
+            color: white;
+        }
+        .header__container {
+            display: inline-block;
+            max-width:100%;
+            margin-top: 200px;
+            text-align: center;
+            z-index: 1;
+            color: #F16664;
+            font-family: 'Josefin Slab', sans-serif;
+
+        }
+        .header__container h1 {
+            text-align: center;
+            padding-bottom: 0;
+            font-size: 17px;
+            line-height: 1em;
+        }
+        .header__container h2 {
+            font-size: 90px;
+            letter-spacing: 0.025em;
+
+        }
+        .header__canvas {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0.75;
+            z-index: 0;
+        }
+        .container-fluid{
+            padding-left: 0;
+        }
+        #header{
+            text-align: center;
+            width: 100%;
+        }
+
+    </style>
+
+   <!-- <style>
+        /* Get the bourbon mixin from http://bourbon.io */
+        /* Reset */
+        .flip-clock-wrapper * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-clock-wrapper a {
+            cursor: pointer;
+            text-decoration: none;
+            color: #ccc; }
+
+        .flip-clock-wrapper a:hover {
+            color: #fff; }
+
+        .flip-clock-wrapper ul {
+            list-style: none; }
+
+        .flip-clock-wrapper.clearfix:before,
+        .flip-clock-wrapper.clearfix:after {
+            content: " ";
+            display: table; }
+
+        .flip-clock-wrapper.clearfix:after {
+            clear: both; }
+
+        .flip-clock-wrapper.clearfix {
+            *zoom: 1; }
+
+        /* Main */
+        .flip-clock-wrapper {
+            font: normal 11px "Helvetica Neue", Helvetica, sans-serif;
+            -webkit-user-select: none; }
+
+        .flip-clock-meridium {
+            background: none !important;
+            box-shadow: 0 0 0 !important;
+            font-size: 36px !important; }
+
+        .flip-clock-meridium a { color: #313333; }
+
+        .flip-clock-wrapper {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            margin: 1em;
+        }
+
+        .flip-clock-wrapper:before,
+        .flip-clock-wrapper:after {
+            content: " "; /* 1 */
+            display: table; /* 2 */
+        }
+        .flip-clock-wrapper:after {
+            clear: both;
+        }
+
+        /* Skeleton */
+        .flip-clock-wrapper ul {
+            position: relative;
+            float: left;
+            margin: 5px;
+            width: 60px;
+            height: 90px;
+            font-size: 80px;
+            font-weight: bold;
+            line-height: 87px;
+            border-radius: 6px;
+            background: #000;
+        }
+
+        .flip-clock-wrapper ul li {
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            line-height: 87px;
+            text-decoration: none !important;
+        }
+
+        .flip-clock-wrapper ul li:first-child {
+            z-index: 2; }
+
+        .flip-clock-wrapper ul li a {
+            display: block;
+            height: 100%;
+            -webkit-perspective: 200px;
+            -moz-perspective: 200px;
+            perspective: 200px;
+            margin: 0 !important;
+            overflow: visible !important;
+            cursor: default !important; }
+
+        .flip-clock-wrapper ul li a div {
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            font-size: 80px;
+            overflow: hidden;
+            outline: 1px solid transparent; }
+
+        .flip-clock-wrapper ul li a div .shadow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2; }
+
+        .flip-clock-wrapper ul li a div.up {
+            -webkit-transform-origin: 50% 100%;
+            -moz-transform-origin: 50% 100%;
+            -ms-transform-origin: 50% 100%;
+            -o-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+            top: 0; }
+
+        .flip-clock-wrapper ul li a div.up:after {
+            content: "";
+            position: absolute;
+            top: 44px;
+            left: 0;
+            z-index: 5;
+            width: 100%;
+            height: 3px;
+            background-color: #000;
+            background-color: rgba(0, 0, 0, 0.4); }
+
+        .flip-clock-wrapper ul li a div.down {
+            -webkit-transform-origin: 50% 0;
+            -moz-transform-origin: 50% 0;
+            -ms-transform-origin: 50% 0;
+            -o-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+            bottom: 0;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        .flip-clock-wrapper ul li a div div.inn {
+            position: absolute;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 200%;
+            color: #ccc;
+            text-shadow: 0 1px 2px #000;
+            text-align: center;
+            background-color: #333;
+            border-radius: 6px;
+            font-size: 70px; }
+
+        .flip-clock-wrapper ul li a div.up div.inn {
+            top: 0; }
+
+        .flip-clock-wrapper ul li a div.down div.inn {
+            bottom: 0; }
+
+        /* PLAY */
+        .flip-clock-wrapper ul.play li.flip-clock-before {
+            z-index: 3; }
+
+        .flip-clock-wrapper .flip {   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); }
+
+        .flip-clock-wrapper ul.play li.flip-clock-active {
+            -webkit-animation: asd 0.5s 0.5s linear both;
+            -moz-animation: asd 0.5s 0.5s linear both;
+            animation: asd 0.5s 0.5s linear both;
+            z-index: 5; }
+
+        .flip-clock-divider {
+            float: left;
+            display: inline-block;
+            position: relative;
+            width: 20px;
+            height: 100px; }
+
+        .flip-clock-divider:first-child {
+            width: 0; }
+
+        .flip-clock-dot {
+            display: block;
+            background: #323434;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            left: 5px; }
+
+        .flip-clock-divider .flip-clock-label {
+            position: absolute;
+            top: -1.5em;
+            right: -86px;
+            color: black;
+            text-shadow: none; }
+
+        .flip-clock-divider.minutes .flip-clock-label {
+            right: -88px; }
+
+        .flip-clock-divider.seconds .flip-clock-label {
+            right: -91px; }
+
+        .flip-clock-dot.top {
+            top: 30px; }
+
+        .flip-clock-dot.bottom {
+            bottom: 30px; }
+
+        @-webkit-keyframes asd {
+            0% {
+                z-index: 2; }
+
+            20% {
+                z-index: 4; }
+
+            100% {
+                z-index: 4; } }
+
+        @-moz-keyframes asd {
+            0% {
+                z-index: 2; }
+
+            20% {
+                z-index: 4; }
+
+            100% {
+                z-index: 4; } }
+
+        @-o-keyframes asd {
+            0% {
+                z-index: 2; }
+
+            20% {
+                z-index: 4; }
+
+            100% {
+                z-index: 4; } }
+
+        @keyframes asd {
+            0% {
+                z-index: 2; }
+
+            20% {
+                z-index: 4; }
+
+            100% {
+                z-index: 4; } }
+
+        .flip-clock-wrapper ul.play li.flip-clock-active .down {
+            z-index: 2;
+            -webkit-animation: turn 0.5s 0.5s linear both;
+            -moz-animation: turn 0.5s 0.5s linear both;
+            animation: turn 0.5s 0.5s linear both; }
+
+        @-webkit-keyframes turn {
+            0% {
+                -webkit-transform: rotateX(90deg); }
+
+            100% {
+                -webkit-transform: rotateX(0deg); } }
+
+        @-moz-keyframes turn {
+            0% {
+                -moz-transform: rotateX(90deg); }
+
+            100% {
+                -moz-transform: rotateX(0deg); } }
+
+        @-o-keyframes turn {
+            0% {
+                -o-transform: rotateX(90deg); }
+
+            100% {
+                -o-transform: rotateX(0deg); } }
+
+        @keyframes turn {
+            0% {
+                transform: rotateX(90deg); }
+
+            100% {
+                transform: rotateX(0deg); } }
+
+        .flip-clock-wrapper ul.play li.flip-clock-before .up {
+            z-index: 2;
+            -webkit-animation: turn2 0.5s linear both;
+            -moz-animation: turn2 0.5s linear both;
+            animation: turn2 0.5s linear both; }
+
+        @-webkit-keyframes turn2 {
+            0% {
+                -webkit-transform: rotateX(0deg); }
+
+            100% {
+                -webkit-transform: rotateX(-90deg); } }
+
+        @-moz-keyframes turn2 {
+            0% {
+                -moz-transform: rotateX(0deg); }
+
+            100% {
+                -moz-transform: rotateX(-90deg); } }
+
+        @-o-keyframes turn2 {
+            0% {
+                -o-transform: rotateX(0deg); }
+
+            100% {
+                -o-transform: rotateX(-90deg); } }
+
+        @keyframes turn2 {
+            0% {
+                transform: rotateX(0deg); }
+
+            100% {
+                transform: rotateX(-90deg); } }
+
+        .flip-clock-wrapper ul li.flip-clock-active {
+            z-index: 3; }
+
+        /* SHADOW */
+        .flip-clock-wrapper ul.play li.flip-clock-before .up .shadow {
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+            background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
+            background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+            background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+            background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+            -webkit-animation: show 0.5s linear both;
+            -moz-animation: show 0.5s linear both;
+            animation: show 0.5s linear both; }
+
+        .flip-clock-wrapper ul.play li.flip-clock-active .up .shadow {
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+            background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
+            background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+            background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+            background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+            -webkit-animation: hide 0.5s 0.3s linear both;
+            -moz-animation: hide 0.5s 0.3s linear both;
+            animation: hide 0.5s 0.3s linear both; }
+
+        /*DOWN*/
+        .flip-clock-wrapper ul.play li.flip-clock-before .down .shadow {
+            background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+            background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
+            background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+            background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+            background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+            -webkit-animation: show 0.5s linear both;
+            -moz-animation: show 0.5s linear both;
+            animation: show 0.5s linear both; }
+
+        .flip-clock-wrapper ul.play li.flip-clock-active .down .shadow {
+            background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+            background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
+            background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+            background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+            background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+            -webkit-animation: hide 0.5s 0.3s linear both;
+            -moz-animation: hide 0.5s 0.3s linear both;
+            animation: hide 0.5s 0.2s linear both; }
+
+        @-webkit-keyframes show {
+            0% {
+                opacity: 0; }
+
+            100% {
+                opacity: 1; } }
+
+        @-moz-keyframes show {
+            0% {
+                opacity: 0; }
+
+            100% {
+                opacity: 1; } }
+
+        @-o-keyframes show {
+            0% {
+                opacity: 0; }
+
+            100% {
+                opacity: 1; } }
+
+        @keyframes show {
+            0% {
+                opacity: 0; }
+
+            100% {
+                opacity: 1; } }
+
+        @-webkit-keyframes hide {
+            0% {
+                opacity: 1; }
+
+            100% {
+                opacity: 0; } }
+
+        @-moz-keyframes hide {
+            0% {
+                opacity: 1; }
+
+            100% {
+                opacity: 0; } }
+
+        @-o-keyframes hide {
+            0% {
+                opacity: 1; }
+
+            100% {
+                opacity: 0; } }
+
+        @keyframes hide {
+            0% {
+                opacity: 1; }
+
+            100% {
+                opacity: 0; } }
+    </style>-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "bootswatch.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+  </head>
+  <body>
+  <!--<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="../" class="navbar-brand">Ubertech</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+            <ul class="dropdown-menu" aria-labelledby="themes">
+              <li><a href="../default/">Default</a></li>
+              <li class="divider"></li>
+              <li><a href="../cerulean/">Cerulean</a></li>
+              <li><a href="../cosmo/">Cosmo</a></li>
+              <li><a href="../cyborg/">Cyborg</a></li>
+              <li><a href="../darkly/">Darkly</a></li>
+              <li><a href="../flatly/">Flatly</a></li>
+              <li><a href="../journal/">Journal</a></li>
+              <li><a href="../lumen/">Lumen</a></li>
+              <li><a href="../paper/">Paper</a></li>
+              <li><a href="../readable/">Readable</a></li>
+              <li><a href="../sandstone/">Sandstone</a></li>
+              <li><a href="../simplex/">Simplex</a></li>
+              <li><a href="../slate/">Slate</a></li>
+              <li><a href="../spacelab/">Spacelab</a></li>
+              <li><a href="../superhero/">Superhero</a></li>
+              <li><a href="../united/">United</a></li>
+              <li><a href="../yeti/">Yeti</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../help/">Help</a>
+          </li>
+          <li>
+            <a href="http://news.bootswatch.com">Blog</a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Flatly <span class="caret"></span></a>
+            <ul class="dropdown-menu" aria-labelledby="download">
+              <li><a href="http://jsfiddle.net/bootswatch/jmg3gykg/">Open Sandbox</a></li>
+              <li class="divider"></li>
+              <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
+              <li><a href="./bootstrap.css">bootstrap.css</a></li>
+              <li class="divider"></li>
+              <li><a href="./variables.less">variables.less</a></li>
+              <li><a href="./bootswatch.less">bootswatch.less</a></li>
+              <li class="divider"></li>
+              <li><a href="./_variables.scss">_variables.scss</a></li>
+              <li><a href="./_bootswatch.scss">_bootswatch.scss</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
+          <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>
+        </ul>
+
+
+        </div>
+      </div>
+    </div>-->
+
+    <!-- Particle Header -->
+
+    <div class="container-fluid fill header__wrapper header__wrapper--particler" style="height: 700px">
+        <canvas class="header__canvas" id="particler-instance"></canvas>
+        <div id="header">
+            <header class="header__container">
+                <h2>Ubertech 2k16</h2>
+            </header>
+        </div>
+    </div>
+
+    <div class="white" style="background-color: #ffffff">
+
+    <!-- About -->
+    <section id="" class="section why" style="padding: 50px 50px">
+        <div class="container">
+            <h2 class="title text-center" style="color:#F16664">Get Ready for Ubertech'16!</h2>
+            <div class="flex-container">
+                <div class="col-sm-6 hidden-xs" ><!--style="padding:10px 10px 0px 10px;"--><br><br>
+                    <div class="clock">
+                    </div>
+                </div>
+                <div class="col-sm-6" ><!--style="padding:40px 10px 0px 10px;"--><br><br>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-rSFUTpiF1Y" frameborder="0"  width="" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events -->
+    <!-- Workshop Grid Section -->
+    <section class="section" id="workshops">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" style="padding-bottom:50px;">
+                    <h2 class="title" style="color:#F16664">Events</h2>
+                    <hr style="width:200px">
+                </div>
+            </div>
+            <div class="row" id="workshopmodal">
+                <div class="flex-container">
+                    <div class="col-md-4 portfolio-item center" style="margin: 15px auto;">
+                        <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="magnamind.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 portfolio-item center" style="margin: 15px auto;">
+                        <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="magnamind.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 portfolio-item center" style="margin: 15px auto;">
+                        <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="magnamind.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 portfolio-item center" style="margin: 15px auto;">
+                        <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="magnamind.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 portfolio-item center" style="margin: 15px auto;">
+                        <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="magnamind.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 portfolio-item center" style="margin: 15px auto;">
+                        <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="magnamind.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 portfolio-item center" style="margin: 15px auto;">
+                        <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="magnamind.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+
+    <aside class="bg-dark" style="margin-top: 50px;background-color: #222222;padding: 50px"; id="contact" >
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2 style="color:#F16664">Click here to join the adventure!</h2><br><br>
+                <a href="#" class="btn btn-default btn-xl sr-button">Register!</a><br><br><br>
+            </div>
+        </div>
+    </aside>
+
+
+
+        <!-- contact -->
+        <section id="contact" class="section" style="margin-top: 50px">
+            <div class="container">
+                <div class="row" style="padding-bottom:50px;">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="title text-center">Contact</h2>
+                        <hr style="width:200px">
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <div>
+                        <div class="row text-center">
+                            <span class="intro">Event Organisers<br/></span>
+                        </div>
+                        <div class="flex-container-contact">
+                            <div class="col-md-4 text-center">
+                                <h3>lorem ipsum</h3>
+                                <span>groverkg04@gmail.com</span><br/>
+                                <i class="fa fa-mobile fa-2x"></i>
+                                &nbsp;
+                                <span class="">+91 7200261756</span>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h3>lorem ipsum</h3>
+                                <span>namanjha1830@yahoo.co.in</span><br/>
+                                <i class="fa fa-mobile fa-2x"></i>
+                                &nbsp;
+                                <span class="">+91 9042912220</span>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h3>lorem ipsum</h3>
+                                <span>vvchakradhar12@gmail.com</span><br/>
+                                <i class="fa fa-mobile fa-2x"></i>
+                                &nbsp;
+                                <span class="">+91 7358560972</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>         <div class="row text-center">
+                <div>
+                    <div class="row text-center">
+                        <span class="intro">Staff Coordinators</span><br/>
+                    </div>
+                    <div class="flex-container-contact">
+                        <div class="col-md-4 text-center">
+                            <h3>lorem ipsum</h3>
+                            <span>anita.j@vdp.srmuniv.ac.in</span><br/>
+                            <i class="fa fa-mobile fa-2x"></i>
+                            &nbsp;
+                            <span class="">+91 9444028830</span>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <h3>lorem ipsum</h3>
+                            <span>benudeepsun.s@vdp.srmuniv.ac.in</span><br/>
+                            <i class="fa fa-mobile fa-2x"></i>
+                            &nbsp;
+                            <span class="">+91 8939789171</span>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <h3>lorem ipsum</h3>
+                            <span>aruna.p@vdp.srmuniv.ac.in</span><br/>
+                            <i class="fa fa-mobile fa-2x"></i>
+                            &nbsp;
+                            <span class="">+91 99500721814</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="col-md-12 text-center" style="padding:50px;">
+                    <br />
+                    <br />
+                    <span class="intro">For any queries email us at <a href="mailto:srmxion2016@gmail.com">ubertech2k16@gmail.com</a></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-map" class="clearfix">
+            <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62190.51413949061!2d80.17595251666332!3d13.041582865796219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266ea218fc7e3%3A0x70bbbca6edfc9243!2sSRM+University+Vadapalani!5e0!3m2!1sen!2sin!4v1445262711066" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br /><small><a href="https://www.google.co.in/maps/place/SRM+University+Vadapalani/@13.0415829,80.1759525,13z/data=!4m5!1m2!2m1!1ssrm+university+vadapalani.+jawaharlal+nehru+road+vadapalani+chennai+tamil+nadu!3m1!1s0x3a5266ea218fc7e3:0x70bbbca6edfc9243"></a></small></iframe></div>
+        </section>
+        <!-- ******FOOTER****** -->
+        <footer class="text-center footer">
+            <div class="footer-above">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col col-md-4">
+                            <h3>Location</h3>
+                            <p>SRM University - Vadapalani<br>#1, Jawaharlal Nehru Road, Vadapalani, Chennai - 600026</p>
+                        </div>
+                        <div class="footer-col col-md-4">
+                            <h3>Around the Web</h3>
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="https://www.facebook.com/Xion2016" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/srmxion" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-col col-md-4">
+                            <h3>About Us</h3>
+                            <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+   <!-- <div class="container">
+
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            <h1>Flatly</h1>
+            <p class="lead">Flat and modern</p>
+          </div>
+          <div class="col-lg-4 col-md-5 col-sm-6">
+            <div class="sponsor">
+              <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootswatchcom" id="_carbonads_js"></script>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="list-group table-of-contents">
+              <a class="list-group-item" href="#navbar">Navbar</a>
+              <a class="list-group-item" href="#buttons">Buttons</a>
+              <a class="list-group-item" href="#typography">Typography</a>
+              <a class="list-group-item" href="#tables">Tables</a>
+              <a class="list-group-item" href="#forms">Forms</a>
+              <a class="list-group-item" href="#navs">Navs</a>
+              <a class="list-group-item" href="#indicators">Indicators</a>
+              <a class="list-group-item" href="#progress-bars">Progress bars</a>
+              <a class="list-group-item" href="#containers">Containers</a>
+              <a class="list-group-item" href="#dialogs">Dialogs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navbar
+      ================================================== -->
+  <!--    <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="navbar">Navbar</h1>
+            </div>
+
+            <div class="bs-component">
+              <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                  </div>
+
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                      <li><a href="#">Link</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Link</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+
+            <div class="bs-component">
+              <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                  </div>
+
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                      <li><a href="#">Link</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Link</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div><!-- /example -->
+
+      <!--    </div>
+        </div>
+      </div>
+
+
+      <!-- Buttons
+      ================================================== -->
+   <!--   <div class="bs-docs-section">
+        <div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 id="buttons">Buttons</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-7">
+
+            <p class="bs-component">
+              <a href="#" class="btn btn-default">Default</a>
+              <a href="#" class="btn btn-primary">Primary</a>
+              <a href="#" class="btn btn-success">Success</a>
+              <a href="#" class="btn btn-info">Info</a>
+              <a href="#" class="btn btn-warning">Warning</a>
+              <a href="#" class="btn btn-danger">Danger</a>
+              <a href="#" class="btn btn-link">Link</a>
+            </p>
+
+            <p class="bs-component">
+              <a href="#" class="btn btn-default disabled">Default</a>
+              <a href="#" class="btn btn-primary disabled">Primary</a>
+              <a href="#" class="btn btn-success disabled">Success</a>
+              <a href="#" class="btn btn-info disabled">Info</a>
+              <a href="#" class="btn btn-warning disabled">Warning</a>
+              <a href="#" class="btn btn-danger disabled">Danger</a>
+              <a href="#" class="btn btn-link disabled">Link</a>
+            </p>
+
+
+            <div style="margin-bottom: 15px;">
+              <div class="btn-toolbar bs-component" style="margin: 0;">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-default">Default</a>
+                  <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+
+                <div class="btn-group">
+                  <a href="#" class="btn btn-primary">Primary</a>
+                  <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+
+                <div class="btn-group">
+                  <a href="#" class="btn btn-success">Success</a>
+                  <a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+
+                <div class="btn-group">
+                  <a href="#" class="btn btn-info">Info</a>
+                  <a href="#" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+
+                <div class="btn-group">
+                  <a href="#" class="btn btn-warning">Warning</a>
+                  <a href="#" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <p class="bs-component">
+              <a href="#" class="btn btn-primary btn-lg">Large button</a>
+              <a href="#" class="btn btn-primary">Default button</a>
+              <a href="#" class="btn btn-primary btn-sm">Small button</a>
+              <a href="#" class="btn btn-primary btn-xs">Mini button</a>
+            </p>
+
+          </div>
+          <div class="col-lg-5">
+
+            <p class="bs-component">
+              <a href="#" class="btn btn-default btn-lg btn-block">Block level button</a>
+            </p>
+
+
+            <div class="bs-component" style="margin-bottom: 15px;">
+              <div class="btn-group btn-group-justified">
+                <a href="#" class="btn btn-default">Left</a>
+                <a href="#" class="btn btn-default">Middle</a>
+                <a href="#" class="btn btn-default">Right</a>
+              </div>
+            </div>
+
+            <div class="bs-component" style="margin-bottom: 15px;">
+              <div class="btn-toolbar">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-default">1</a>
+                  <a href="#" class="btn btn-default">2</a>
+                  <a href="#" class="btn btn-default">3</a>
+                  <a href="#" class="btn btn-default">4</a>
+                </div>
+
+                <div class="btn-group">
+                  <a href="#" class="btn btn-default">5</a>
+                  <a href="#" class="btn btn-default">6</a>
+                  <a href="#" class="btn btn-default">7</a>
+                </div>
+
+                <div class="btn-group">
+                  <a href="#" class="btn btn-default">8</a>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      Dropdown
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Dropdown link</a></li>
+                      <li><a href="#">Dropdown link</a></li>
+                      <li><a href="#">Dropdown link</a></li>
+                     </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bs-component">
+              <div class="btn-group-vertical">
+                  <a href="#" class="btn btn-default">Button</a>
+                  <a href="#" class="btn btn-default">Button</a>
+                  <a href="#" class="btn btn-default">Button</a>
+                  <a href="#" class="btn btn-default">Button</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Typography
+      ================================================== -->
+   <!--   <div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="typography">Typography</h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Headings -->
+
+   <!--     <div class="row">
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h3>
+              <h4>Heading 4</h4>
+              <h5>Heading 5</h5>
+              <h6>Heading 6</h6>
+              <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <h2>Example body text</h2>
+              <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+              <p><small>This line of text is meant to be treated as fine print.</small></p>
+              <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+              <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+              <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+            </div>
+
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <h2>Emphasis classes</h2>
+              <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+              <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+              <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+              <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Blockquotes -->
+
+<!--        <div class="row">
+          <div class="col-lg-12">
+            <h2 id="type-blockquotes">Blockquotes</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="bs-component">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="bs-component">
+              <blockquote class="blockquote-reverse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tables
+      ================================================== -->
+ <!--     <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="tables">Tables</h1>
+            </div>
+
+            <div class="bs-component">
+              <table class="table table-striped table-hover ">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Column heading</th>
+                    <th>Column heading</th>
+                    <th>Column heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="info">
+                    <td>3</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="success">
+                    <td>4</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="danger">
+                    <td>5</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="warning">
+                    <td>6</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="active">
+                    <td>7</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><!-- /example -->
+ <!--         </div>
+        </div>
+      </div>
+
+      <!-- Forms
+      ================================================== -->
+  <!--    <div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="forms">Forms</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="well bs-component">
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Legend</legend>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <div class="col-lg-10">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Checkbox
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+                    <div class="col-lg-10">
+                      <textarea class="form-control" rows="3" id="textArea"></textarea>
+                      <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Radios</label>
+                    <div class="col-lg-10">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                          Option one is this
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                          Option two can be something else
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">Selects</label>
+                    <div class="col-lg-10">
+                      <select class="form-control" id="select">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                      <br>
+                      <select multiple="" class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <button type="reset" class="btn btn-default">Cancel</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4 col-lg-offset-1">
+
+              <form class="bs-component">
+                <div class="form-group">
+                  <label class="control-label" for="focusedInput">Focused input</label>
+                  <input class="form-control" id="focusedInput" type="text" value="This is focused...">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label" for="disabledInput">Disabled input</label>
+                  <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                </div>
+
+                <div class="form-group has-warning">
+                  <label class="control-label" for="inputWarning">Input warning</label>
+                  <input type="text" class="form-control" id="inputWarning">
+                </div>
+
+                <div class="form-group has-error">
+                  <label class="control-label" for="inputError">Input error</label>
+                  <input type="text" class="form-control" id="inputError">
+                </div>
+
+                <div class="form-group has-success">
+                  <label class="control-label" for="inputSuccess">Input success</label>
+                  <input type="text" class="form-control" id="inputSuccess">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label" for="inputLarge">Large input</label>
+                  <input class="form-control input-lg" type="text" id="inputLarge">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label" for="inputDefault">Default input</label>
+                  <input type="text" class="form-control" id="inputDefault">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label" for="inputSmall">Small input</label>
+                  <input class="form-control input-sm" type="text" id="inputSmall">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Input addons</label>
+                  <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Button</button>
+                    </span>
+                  </div>
+                </div>
+              </form>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Navs
+      ================================================== -->
+   <!--   <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="navs">Navs</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 id="nav-tabs">Tabs</h2>
+            <div class="bs-component">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                <li><a href="#profile" data-toggle="tab">Profile</a></li>
+                <li class="disabled"><a>Disabled</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Dropdown <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="home">
+                  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                </div>
+                <div class="tab-pane fade" id="profile">
+                  <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                </div>
+                <div class="tab-pane fade" id="dropdown1">
+                  <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+                </div>
+                <div class="tab-pane fade" id="dropdown2">
+                  <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h2 id="nav-pills">Pills</h2>
+            <div class="bs-component">
+              <ul class="nav nav-pills">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li class="disabled"><a href="#">Disabled</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Dropdown <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <br>
+            <div class="bs-component">
+              <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li class="disabled"><a href="#">Disabled</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Dropdown <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h2 id="nav-breadcrumbs">Breadcrumbs</h2>
+            <div class="bs-component">
+              <ul class="breadcrumb">
+                <li class="active">Home</li>
+              </ul>
+
+              <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Library</li>
+              </ul>
+
+              <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 id="pagination">Pagination</h2>
+            <div class="bs-component">
+              <ul class="pagination">
+                <li class="disabled"><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+
+              <ul class="pagination pagination-lg">
+                <li class="disabled"><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+
+              <ul class="pagination pagination-sm">
+                <li class="disabled"><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h2 id="pager">Pager</h2>
+            <div class="bs-component">
+              <ul class="pager">
+                <li><a href="#">Previous</a></li>
+                <li><a href="#">Next</a></li>
+              </ul>
+
+              <ul class="pager">
+                <li class="previous disabled"><a href="#">&larr; Older</a></li>
+                <li class="next"><a href="#">Newer &rarr;</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicators
+      ================================================== -->
+ <!--     <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="indicators">Indicators</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Alerts</h2>
+            <div class="bs-component">
+              <div class="alert alert-dismissible alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h4>Warning!</h4>
+                <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="alert alert-dismissible alert-info">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2>Labels</h2>
+            <div class="bs-component" style="margin-bottom: 40px;">
+              <span class="label label-default">Default</span>
+              <span class="label label-primary">Primary</span>
+              <span class="label label-success">Success</span>
+              <span class="label label-warning">Warning</span>
+              <span class="label label-danger">Danger</span>
+              <span class="label label-info">Info</span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h2>Badges</h2>
+            <div class="bs-component">
+              <ul class="nav nav-pills">
+                <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
+                <li><a href="#">Profile <span class="badge"></span></a></li>
+                <li><a href="#">Messages <span class="badge">3</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress bars
+      ================================================== -->
+  <!--    <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="progress-bars">Progress bars</h1>
+            </div>
+
+            <h3 id="progress-basic">Basic</h3>
+            <div class="bs-component">
+              <div class="progress">
+                <div class="progress-bar" style="width: 60%;"></div>
+              </div>
+            </div>
+
+            <h3 id="progress-alternatives">Contextual alternatives</h3>
+            <div class="bs-component">
+              <div class="progress">
+                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+              </div>
+
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+              </div>
+
+              <div class="progress">
+                <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+              </div>
+
+              <div class="progress">
+                <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <h3 id="progress-striped">Striped</h3>
+            <div class="bs-component">
+              <div class="progress progress-striped">
+                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+              </div>
+
+              <div class="progress progress-striped">
+                <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+              </div>
+
+              <div class="progress progress-striped">
+                <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+              </div>
+
+              <div class="progress progress-striped">
+                <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <h3 id="progress-animated">Animated</h3>
+            <div class="bs-component">
+              <div class="progress progress-striped active">
+                <div class="progress-bar" style="width: 45%"></div>
+              </div>
+            </div>
+
+            <h3 id="progress-stacked">Stacked</h3>
+            <div class="bs-component">
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" style="width: 35%"></div>
+                <div class="progress-bar progress-bar-warning" style="width: 20%"></div>
+                <div class="progress-bar progress-bar-danger" style="width: 10%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Containers
+      ================================================== -->
+ <!--     <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="containers">Containers</h1>
+            </div>
+            <div class="bs-component">
+              <div class="jumbotron">
+                <h1>Jumbotron</h1>
+                <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>List groups</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <span class="badge">14</span>
+                  Cras justo odio
+                </li>
+                <li class="list-group-item">
+                  <span class="badge">2</span>
+                  Dapibus ac facilisis in
+                </li>
+                <li class="list-group-item">
+                  <span class="badge">1</span>
+                  Morbi leo risus
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="list-group">
+                <a href="#" class="list-group-item active">
+                  Cras justo odio
+                </a>
+                <a href="#" class="list-group-item">Dapibus ac facilisis in
+                </a>
+                <a href="#" class="list-group-item">Morbi leo risus
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="list-group">
+                <a href="#" class="list-group-item">
+                  <h4 class="list-group-item-heading">List group item heading</h4>
+                  <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                </a>
+                <a href="#" class="list-group-item">
+                  <h4 class="list-group-item-heading">List group item heading</h4>
+                  <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Panels</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  Basic panel
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">Panel heading</div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  Panel content
+                </div>
+                <div class="panel-footer">Panel footer</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel primary</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel success</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel warning</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="panel panel-danger">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel danger</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel info</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Wells</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="well">
+                Look, I'm in a well!
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="well well-sm">
+                Look, I'm in a small well!
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="well well-lg">
+                Look, I'm in a large well!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dialogs
+      ================================================== -->
+  <!--    <div class="bs-docs-section">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="dialogs">Dialogs</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>Modals</h2>
+            <div class="bs-component">
+              <div class="modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>One fine body…</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h2>Popovers</h2>
+            <div class="bs-component">
+              <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
+
+              <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
+
+              <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+              sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
+
+              <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
+            </div>
+            <h2>Tooltips</h2>
+            <div class="bs-component">
+              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left">Left</button>
+
+              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Top</button>
+
+              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom">Bottom</button>
+
+              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right">Right</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="source-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Source Code</h4>
+            </div>
+            <div class="modal-body">
+              <pre></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+              <li><a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
+              <li><a href="http://feeds.feedburner.com/bootswatch">RSS</a></li>
+              <li><a href="https://twitter.com/bootswatch">Twitter</a></li>
+              <li><a href="https://github.com/thomaspark/bootswatch/">GitHub</a></li>
+              <li><a href="../help/#api">API</a></li>
+              <li><a href="../help/#support">Support</a></li>
+            </ul>
+            <p>Made by <a href="http://thomaspark.co" rel="nofollow">Thomas Park</a>. Contact him at <a href="mailto:thomas@bootswatch.com">thomas@bootswatch.com</a>.</p>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+
+          </div>
+        </div>
+
+      </footer>
+
+
+    </div> -->
+
+    </div>
+
+    <!-- Workshop Modal 1 -->
+    <div class="portfolio-modal modal fade" id="workshopModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h2>Mind Wave Control Robot</h2>
+                    Dates : 9<sup>th</sup> & 10<sup>th</sup> March 2016<br/>
+                    Cost : Rs. 1200 per head - Group of 5
+                    <hr>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#Highlights5" data-toggle="tab">Highlights</a></li>
+                        <li><a href="#rules5" data-toggle="tab">Rules</a></li>
+                        <li><a href="#Partnership5" data-toggle="tab">Partnership</a></li>
+                        <li><a href="#contact5" data-toggle="tab">Contact</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="rules5"><br/>
+                            <ul style="text-align:left">
+                                <li>The maximum number of team members in a team is limited to 5. They may belong to different institutions.</li>
+                                <li>All team members must carry their institute identity cards for event registration.</li>
+                                <li>One laptop per team is complusary.</li>
+
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="Highlights5" align="center">
+                            <ul style="text-align:left;padding:50px 20px 20px 20px;" ><u>Topics Covered</u>
+                                <li>Mind control robot</li>
+                                <li>Speed control based on mind waves</li>
+                                <li>Attention Measurement</li>
+                                <li>Mediation Mesurement</li>
+                                <li>Blink control robot</li>
+                                <li>Pc control robot</li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="Partnership5" align="center">
+                            <ul style="text-align:left;padding:50px 20px 20px 20px;">In Association with
+                                <li>AMALGAM , IIT Madras</li>
+                                <li>Robokart.com</li>
+                                <li>ARK Tech</li>
+                            </ul>
+                            <ul style="text-align:left;padding:20px 20px 20px 20px;">Certificates
+                                <li>All the students will get participation certificate from ARK Tech Mumbai in association with AMALGAM,IIT Madras</li>
+                                <li>Winning team will get a chance to represent at National Robotics Championship.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="contact5" align="center" style="padding:20px;">
+                            <h4>Event Co-Ordinators</h4><br/>
+                            <i class="fa fa-user fa-2x"></i>&nbsp;
+                            <span class="title"><b>Kartik Grover</b></span><br/>
+                            <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 7200261756</span><br /><br />
+                            <i class="fa fa-user fa-2x"></i>&nbsp;
+                            <span class="title"><b>Naman Jha</b></span><br/>
+                            <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9042912220</span><br /><br />
+                        </div><br/>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="custom.js"></script>
+
+    <script src="flipclock.js"></script>
+
+    <!--<script src="http://www.srmxion.in/FlipClock/flipclock.min.js"></script>-->
+
+    <script type="text/javascript">
+        var clock;
+
+        $(document).ready(function() {
+
+            // Grab the current date
+            var currentDate = new Date();
+
+            // Set some date in the future. In this case, it's always Jan 1
+            var futureDate  = new Date('August 25, 2016 09:00:00');
+
+            // Calculate the difference in seconds between the future and current date
+            var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+            // Instantiate a coutdown FlipClock
+            clock = $('.clock').FlipClock(diff, {
+                clockFace: 'DailyCounter',
+                countdown: true,
+                showSeconds: false
+            });
+        });
+    </script>
+
+
+    <!-- include particler.js library -->
+    <script src="particler.js"></script>
+
+    <script type="text/javascript">
+        // define your configuration (optional)
+        var particlerOptions = {
+            quantity: 10,
+            fillColor: "#F16664"
+        };
+
+        // create particler instance
+        var particlerExample = new Particler("particler-instance", particlerOptions);
+    </script>
+
+    <!-- Map -->
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        function init() {
+            // Basic options for a simple Google Map
+            var myLatlng = new google.maps.LatLng(13.0521624,80.208294);
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                zoom: 17,
+                center: myLatlng,
+                scrollwheel: false,
+                styles: [{
+                    featureType:"all",
+                    elementType:"all",
+                    stylers:[{invert_lightness:false},{saturation:0},{lightness:30},{gamma:0.5}]}]
+            };
+
+            // Get the HTML DOM element that will contain your map
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using out element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: 'Ubertech 2K15'
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', init);
+    </script>
+
+  </body>
+</html>
