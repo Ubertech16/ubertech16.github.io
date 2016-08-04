@@ -11,9 +11,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <style>
-        @media only screen and (min-width: 768px) {
+        @media only screen and (max-width: 768px) {
             .header__container h2 {
                 font-size: 90px;
+
+            }
+            .header__container {
+                margin-top: -100px;
             }
         }
 
@@ -175,7 +179,7 @@
         .header__container {
             display: inline-block;
             max-width: 100%;
-            margin-top: 200px;
+            margin-top: 150px;/*200*/
             text-align: center;
             z-index: 1;
             color: #F16664;
@@ -191,7 +195,7 @@
         }
 
         .header__container h2 {
-            font-size: 50px; /*90*/
+            font-size: 40px; /*90*/
             letter-spacing: 0.025em;
 
         }
@@ -299,9 +303,10 @@
     <canvas class="header__canvas" id="particler-instance"></canvas>
     <div id="header">
         <header class="header__container">
-            <h2>SRM University Presents</h2>
+            <h2>SRM University, Vadapalani Presents</h2>
             <h2 style="color: #ffffff">Übertech'16</h2>
             <h2>A National Level Symposium</h2>
+            <h2 style="color: #ffffff">26<sup>th</sup> & 27<sup>th</sup> March 2016</h2>
         </header>
     </div>
 </div>
