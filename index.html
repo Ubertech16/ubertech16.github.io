@@ -8,6 +8,89 @@
     <link rel="stylesheet" href="./bootstrap.css" media="screen">
     <link rel="stylesheet" href="custom.min.css">
     <link rel="stylesheet" href="flipclock/css/flipclock.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+    <style>
+        .checkbox-inline.no_indent,
+    .checkbox-inline.no_indent+.checkbox-inline.no_indent {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .checkbox-inline.no_indent:last-child {
+        margin-right: 0;
+    }
+    </style>
+
+    <style>
+
+        #portfolio .portfolio-item {
+            margin: 0 0 15px;
+            right: 0
+        }
+
+        #portfolio .portfolio-item .portfolio-link {
+            display: block;
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto
+        }
+
+        #portfolio .portfolio-item .portfolio-link .caption {
+            background: rgba(24, 188, 156, .);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all ease .5s;
+            -webkit-transition: all ease .5s;
+            -moz-transition: all ease .5s
+        }
+
+        #portfolio .portfolio-item .portfolio-link .caption:hover {
+            opacity: 1
+        }
+
+        #portfolio .portfolio-item .portfolio-link .caption .caption-content {
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            font-size: 20px;
+            text-align: center;
+            top: 50%;
+            margin-top: -12px;
+            color: #fff
+        }
+
+
+
+        #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
+            margin-top: -12px
+        }
+
+        #portfolio .portfolio-item .portfolio-link .caption .caption-content h3,
+        #portfolio .portfolio-item .portfolio-link .caption .caption-content h4 {
+            margin: 0
+        }
+
+        #portfolio * {
+            z-index: 2
+        }
+
+        @media (min-width:767px) {
+            #portfolio .portfolio-item {
+                margin: 0 0 30px
+            }
+        }
+
+
+
+
+
+
+
+
+    </style>
 
 
     <style>
@@ -18,6 +101,7 @@
             color: #c9cbce;
             padding: 15px 0 10px 0;
         }
+
         #footer p {
             font-size: 13px;
             margin-top: 10px;
@@ -559,24 +643,7 @@
     <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
     <script src="../bower_components/respond/dest/respond.min.js"></script>
     <![endif]-->
-    <script>
 
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-23019901-1']);
-        _gaq.push(['_setDomainName', "bootswatch.com"]);
-        _gaq.push(['_setAllowLinker', true]);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
 </head>
 <body>
 <!--<div class="navbar navbar-default navbar-fixed-top">
@@ -651,9 +718,9 @@
 
 <div class="container-fluid fill header__wrapper header__wrapper--particler" style="height: 700px;">
     <canvas class="header__canvas" id="particler-instance"></canvas>
-    <div id="header" >
-        <header class="header__container" >
-            <h2>Ubertech'16</h2>
+    <div id="header">
+        <header class="header__container">
+            <h2>Übertech'16</h2>
         </header>
     </div>
 </div>
@@ -663,10 +730,10 @@
     <!-- About -->
     <section id="" class="section why" style="padding: 50px 50px">
         <div class="container">
-            <h2 class="title text-center" style="color:#F16664">Get Ready for Ubertech'16!</h2>
+            <h2 class="title text-center" style="color:#F16664">Get Ready for Übertech'16!</h2>
             <div class="flex-container">
                 <div class="col-sm-6 hidden-xs"><!--style="padding:10px 10px 0px 10px;"--><br><br>
-                    <div class="clock">
+                    <div class="clock" style="margin-top: 80px">
                     </div>
                 </div>
                 <div class="col-sm-6"><!--style="padding:40px 10px 0px 10px;"--><br><br>
@@ -679,9 +746,119 @@
         </div>
     </section>
 
-    <!-- Events -->
+    <!-- New Events -->
+    <!-- Portfolio Grid Section -->
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Events</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 portfolio-item">
+                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="Images/google_it.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="Images/code_red.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="Images/spin_web.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="Images/bug_buster.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="Images/venatio.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="Images/act_out.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="Images/io_event.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="Images/paper_pres.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="wrapper cards">
+         <div class="container">
+             <div class="card">
+                 <div class="front"><h2>About me</h2></div>
+                 <div class="back">
+                     <div class="content">
+                         <h3 class="cardTitle">Who am I?</h3>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales, mi ac vulputate blandit, libero nulla bibendum quam.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+     <!-- Events -->
     <!-- Workshop Grid Section -->
-    <section class="section" id="workshops">
+    <!--<section class="section" id="workshops">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center" style="padding-bottom:50px;">
@@ -772,10 +949,13 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2 style="color:#ffffff">Click here to join the adventure!</h2><br><br>
-                <a href="#" class="btn btn-default btn-xl sr-button">Register!</a><br><br>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Register
+                </button><br><br>
             </div>
         </div>
     </aside>
+
 
 
     <!-- contact -->
@@ -818,7 +998,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row text-center">
+            <div class="row text-center"><br>
                 <div>
                     <div class="row text-center">
                         <span class="intro">Staff Coordinators</span><br/>
@@ -851,22 +1031,22 @@
             <div class="col-md-12 text-center" style="padding:50px;">
                 <br/>
                 <br/>
-                <span class="intro">For any queries email us at <a href="mailto:srmxion2016@gmail.com">ubertech2k16@gmail.com</a></span>
+                <span class="intro">For any queries email us at <a href="mailto:ubertech2k16@gmail.com">ubertech2k16@gmail.com</a></span>
             </div>
         </div>
     </section>
 
     <div class="container">
         <section id="section-map" class="clearfix">
-            <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62190.51413949061!2d80.17595251666332!3d13.041582865796219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266ea218fc7e3%3A0x70bbbca6edfc9243!2sSRM+University+Vadapalani!5e0!3m2!1sen!2sin!4v1445262711066"
-                        width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
-                        marginwidth="0"></iframe>
-                <br/>
-                <small><a
-                        href="https://www.google.co.in/maps/place/SRM+University+Vadapalani/@13.0415829,80.1759525,13z/data=!4m5!1m2!2m1!1ssrm+university+vadapalani.+jawaharlal+nehru+road+vadapalani+chennai+tamil+nadu!3m1!1s0x3a5266ea218fc7e3:0x70bbbca6edfc9243"></a>
-                </small>
-                </iframe></div>
+            <!--<div id="map">-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62190.51413949061!2d80.17595251666332!3d13.041582865796219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266ea218fc7e3%3A0x70bbbca6edfc9243!2sSRM+University+Vadapalani!5e0!3m2!1sen!2sin!4v1445262711066"
+                    width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
+                    marginwidth="0"></iframe>
+            <br/>
+            <small><a
+                    href="https://www.google.co.in/maps/place/SRM+University+Vadapalani/@13.0415829,80.1759525,13z/data=!4m5!1m2!2m1!1ssrm+university+vadapalani.+jawaharlal+nehru+road+vadapalani+chennai+tamil+nadu!3m1!1s0x3a5266ea218fc7e3:0x70bbbca6edfc9243"></a>
+            </small>
+            </iframe><!--</div>-->
         </section>
     </div>
     <!-- ******FOOTER****** -->
@@ -2140,6 +2320,69 @@
     </div>
 </div>
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Registration Form</h4>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <input type="text" class="form-control" name="name" placeholder="Name" title="Name" required/><br>
+                    <input type="text" class="form-control" name="regId" placeholder="Registration Number" title="Registration Number" required /><br>
+                    <input type="email" class="form-control" name="email" placeholder="Email" title="Email" required/><br>
+                    <input type="text" class="form-control" name="department" placeholder="Department" title="Department" required/><br>
+                    <input type="text" class="form-control" name="year" placeholder="Year" title="Year" required/><br>
+                    <input type="text" class="form-control" name="year" placeholder="College" title="College Name" required/><br>
+                    <!--<select class="form-control">
+                        <option value="" disabled="disabled" selected="selected">Events</option>
+                        <option value="Adzap">Adzap</option>
+                        <option value="Paper Presentation">Paper Presentation</option>
+                    </select>-->
+                    <label>Select Events: (You can register for multiple events)</label>
+                    <div class="row">
+                    <!--<label class="checkbox-inline no_indent"  id="events" style="display: flex">-->
+                        <div class="col-md-3">
+                        <input type="checkbox" id="inlineCheckbox1" value="option1" > Google It
+                        </div>
+                        <div class="col-md-3">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1" > Code Red
+                        </div>
+                        <div class="col-md-3">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1" > Bug Buster
+                        </div>
+                        <div class="col-md-3">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1" > Act Out
+                        </div>
+                        <div class="col-md-3">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1" > Spin a Web
+                        </div>
+                        <div class="col-md-3">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1" > Paper Dropbox
+                        </div>
+                        <div class="col-md-3">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1" > Venatio
+                        </div>
+                        <div class="col-md-3">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1" > The I/O Event
+                        </div>
+                    <!--</label>--></div>
+                    <!--<input type="checkbox" name="loggedin" value="true">&nbsp Keep me logged in<br>
+                    <div class="about_pos">
+                        <a href="forgotpass.php" style="text-decoration:none; color: silver;margin-left: 10px">Forgot password?</a>
+                    </div><br>--><br>
+                    <input type="submit" href="#" class="btn btn-primary" name="btn_log" value="Register" />
+                </form>
+            </div>
+            <!--<div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>-->
+        </div>
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="bootstrap.min.js"></script>
@@ -2186,40 +2429,10 @@
     // create particler instance
     var particlerExample = new Particler("particler-instance", particlerOptions);
 </script>
+<script>$('.card').click(function(){
+    $(this).toggleClass('flipped');
+});</script>
 
-<!-- Map -->
-<script type="text/javascript">
-    // When the window has finished loading create our google map below
-    function init() {
-        // Basic options for a simple Google Map
-        var myLatlng = new google.maps.LatLng(13.0521624, 80.208294);
-        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-        var mapOptions = {
-            zoom: 17,
-            center: myLatlng,
-            scrollwheel: false,
-            styles: [{
-                featureType: "all",
-                elementType: "all",
-                stylers: [{invert_lightness: false}, {saturation: 0}, {lightness: 30}, {gamma: 0.5}]
-            }]
-        };
-
-        // Get the HTML DOM element that will contain your map
-        // We are using a div with id="map" seen below in the <body>
-        var mapElement = document.getElementById('map');
-
-        // Create the Google Map using out element and options defined above
-        var map = new google.maps.Map(mapElement, mapOptions);
-
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: 'Ubertech 2K15'
-        });
-    }
-    google.maps.event.addDomListener(window, 'load', init);
-</script>
 
 </body>
 </html>
