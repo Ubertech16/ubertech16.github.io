@@ -11,7 +11,161 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <style>
-        .white{
+        /*Flex cards for fun events*/
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .cards {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding: 1.5%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .card {
+            position: relative;
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            background: #fefff9;
+            color: #363636;
+            text-decoration: none;
+            -moz-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+            box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+        }
+        @media (max-width: 700px) {
+            .card {
+                width: 100%;
+            }
+        }
+        @media (min-width: 700px) {
+            .card {
+                max-width: 320px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+            }
+            .card:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+        @media (min-width: 980px) {
+            .card:nth-child(even) {
+                margin-right: 20px;
+            }
+            .card:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+        .card span {
+            display: block;
+        }
+        .card .card-summary {
+            padding: 5% 5% 3% 5%;
+        }
+        .card .card-header {
+            position: relative;
+            height: 175px;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 0.15);
+            background-blend-mode: overlay;
+            -moz-border-radius: 4px 4px 0 0;
+            -webkit-border-radius: 4px;
+            border-radius: 4px 4px 0 0;
+        }
+        .card .card-header:hover, .card .card-header:focus {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        .card .card-title {
+            background: rgba(157, 187, 63, 0.85);
+            padding: 3.5% 0 2.5% 0;
+            color: white;
+            font-family: 'Roboto Condensed', sans-serif;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .card .card-title h3 {
+            font-size: 1.2em;
+            line-height: 1.2;
+            padding: 0 3.5%;
+            margin: 0;
+        }
+        .card .card-meta {
+            max-height: 0;
+            overflow: hidden;
+            color: #666;
+            font-size: .78em;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 5%;
+            padding: 0 5%;
+            -moz-transition-property: max-height;
+            -o-transition-property: max-height;
+            -webkit-transition-property: max-height;
+            transition-property: max-height;
+            -moz-transition-duration: 0.4s;
+            -o-transition-duration: 0.4s;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            -moz-transition-timing-function: ease-in-out;
+            -o-transition-timing-function: ease-in-out;
+            -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+        }
+        .card:hover, .card:focus {
+            background: white;
+            -moz-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+            box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+        }
+        .card:hover .card-title, .card:focus .card-title {
+            background: rgba(157, 187, 63, 0.95);
+        }
+        .card:hover .card-meta, .card:focus .card-meta {
+            max-height: 2em;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+
+        * {
+            -moz-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -moz-transform;
+            -o-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -o-transform;
+            -webkit-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -webkit-transform;
+            transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, transform;
+            -moz-transition-duration: 0.2s;
+            -o-transition-duration: 0.2s;
+            -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+            -moz-transition-timing-function: linear;
+            -o-transition-timing-function: linear;
+            -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+        }
+
+    </style>
+
+    <style>
+        .white {
             background-image: url("android.png");
             margin-top: -20px;
         }
@@ -104,7 +258,7 @@
 
         /* ---- stats.js ---- */
 
-        .count-particles{
+        .count-particles {
             background: #000022;
             position: absolute;
             top: 48px;
@@ -120,23 +274,23 @@
             font-weight: bold;
         }
 
-        .js-count-particles{
+        .js-count-particles {
             font-size: 1.1em;
         }
 
         #stats,
-        .count-particles{
+        .count-particles {
             -webkit-user-select: none;
             margin-top: 5px;
             margin-left: 5px;
         }
 
-        #stats{
+        #stats {
             border-radius: 3px 3px 0 0;
             overflow: hidden;
         }
 
-        .count-particles{
+        .count-particles {
             border-radius: 0 0 3px 3px;
         }
     </style>
@@ -147,6 +301,7 @@
                 font-size: 90px;
 
             }
+
             .header__container h2.first {
                 margin-top: -120px;
             }
@@ -309,9 +464,9 @@
 
         .header__container {
             display: inline-block;
-            position: relative;/*added for new particle*/
+            position: relative; /*added for new particle*/
             max-width: 100%;
-            margin-top: 150px;/*200*/
+            margin-top: 150px; /*200*/
             text-align: center;
             z-index: 1;
             color: #F16664;
@@ -433,19 +588,19 @@
 
 <!-- Particle Header -->
 
-<div class="container-fluid fill header__wrapper header__wrapper--particler" >
+<div class="container-fluid fill header__wrapper header__wrapper--particler" style="height: 700px;">
     <!--<canvas class="header__canvas" id="particler-instance"></canvas>-->
-    <div id="particles-js" style="margin-top: -50px"></div> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+    <div id="particles-js" style="margin-top: -50px"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <div id="header">
         <img src="Srmseal.png" width="100px" style="float: left;position: relative;margin-left: 20px">
         <img src="Ace.png" width="200px" style="float: right;position: relative">
         <header class="header__container" style="margin-left: 7%">
-            <!--<img src="srm_logo.png" style="float: left;position: absolute">-->
             <h2 class="first">SRM University, Vadapalani </h2>
             <h2>Department of Computer Science</h2>
             <h2 style="color: #ffffff">Übertech'16</h2>
             <h2>A National Level Technical Symposium</h2>
-            <h2 style="color: #ffffff">26<sup>th</sup> & 27<sup>th</sup> March 2016</h2>
+            <h2 style="color: #ffffff">26<sup>th</sup> & 27<sup>th</sup> August 2016</h2>
             <div id="buttons">
                 <a href="#" class="btnn blue" data-toggle="modal" data-target="#myModal"><span class="underline" style="color: #ffffff;">Register</span></a>
             </div>
@@ -460,11 +615,11 @@
         <div class="container">
             <h2 class="title text-center" style="color:#F16664">Get Ready for Übertech'16!</h2>
             <div class="flex-container">
-                <div class="col-sm-6 hidden-xs"><!--style="padding:10px 10px 0px 10px;"--><br><br>
+                <div class="col-sm-6 hidden-xs"><br><br>
                     <div class="clock" style="margin-top: 80px">
                     </div>
                 </div>
-                <div class="col-sm-6"><!--style="padding:40px 10px 0px 10px;"--><br><br>
+                <div class="col-sm-6"><br><br>
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eeZvJrKVbvU"
                                 frameborder="0" width="" allowfullscreen></iframe>
@@ -475,19 +630,17 @@
     </section>
 
     <!-- New Events -->
-    <!-- Portfolio Grid Section -->
-    <!-- Portfolio Grid Section -->
-    <!--<section id="portfolio">
+    <section id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Events</h2>
-                    <hr class="star-primary">
+                    <h2>Main Events</h2>
+                    <hr style="width:200px">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-3 portfolio-item">
-                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#InternetNavigation" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -527,7 +680,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3 portfolio-item">
-                    <a href="#" class="portfolio-link" data-toggle="modal">
+                    <a href="#Gaming" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -557,7 +710,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3 portfolio-item">
-                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#PaperDropbox" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -570,10 +723,115 @@
         </div>
     </section>
 
+    <!-- Fun Events -->
+    <div class="container" style="margin-top: 50px">
+        <div class="col-lg-12 text-center">
+            <h2>Fun Events</h2>
+            <hr style="width:200px">
+        </div>
+        <div class="cards">
+            <div class="card" href="#">
+			<span class="card-header" style="background-image: url(http://placeimg.com/400/200/animals);">
+				<span class="card-title">
+					<h3>Treasure Hunt</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+				Image based scavenger hunts. 'Play is the expression of human development'. Goal of the game is to lead the seekers through a set of clues that takes them from place to place to find a treasure. The seekers need to read each clue to find and figure out the next location.
+			</span>
+			<span class="card-meta">
+				<a href="#" data-toggle="modal" data-target="#myModal">Read More</a>
+			</span>
+            </div>
+
+            <div class="card" href="#">
+			<span class="card-header" style="background-image: url(http://placeimg.com/400/200/animals);">
+				<span class="card-title">
+					<h3>Online Photography</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+				'EAT, BREATHE, SLEEP, PHOTOGRAPHY'. Online photography event is a platform to showcase your innate talent in photography.
+			</span>
+			<span class="card-meta">
+				<a href="#" data-toggle="modal" data-target="#myModal">Read More</a>
+			</span>
+            </div>
+
+            <div class="card" href="#">
+			<span class="card-header" style="background-image: url(http://placeimg.com/400/200/animals);">
+				<span class="card-title">
+					<h3>Shipwreck</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+				A personality will be given to the participant on spot. The participant will have to continue the judges as to why he/she should be saved from the sinking ship.
+			</span>
+			<span class="card-meta">
+				<a href="#" data-toggle="modal" data-target="#Shipwreck">Read More</a>
+			</span>
+            </div>
+
+            <div class="card" href="#">
+			<span class="card-header" style="background-image: url(http://placeimg.com/400/200/animals);">
+				<span class="card-title">
+					<h3>Take One</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+				Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum.
+			</span>
+			<span class="card-meta">
+				<a href="#">Read More</a>
+			</span>
+            </div>
+
+            <div class="card" href="#">
+			<span class="card-header" style="background-image: url(http://placeimg.com/400/200/animals);">
+				<span class="card-title">
+					<h3>Connections</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+				Teams will be given sets of four pictures in the first round and teams are expected to make logical connections among the pictures to frame words or phrases.
+			</span>
+			<span class="card-meta">
+				<a href="#">Read More</a>
+			</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workshops -->
+    <section class="section" style="margin-top: 50px;padding-bottom: 30px">
+        <div class="container">
+            <div class="row" style="padding-bottom:30px;">
+                <div class="col-lg-12 text-center">
+                    <h2 class="title text-center">Workshops</h2>
+                    <hr style="width:200px">
+                </div>
+            </div>
+            <div class="row text-center">
+                <div>
+                    <div class="flex-container-contact">
+                        <div class="col-md-4 text-center">
+                            <h3>Kiwi Programming</h3>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <h3>White Hat Hackers Club</h3>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <h3>Android Development</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Registration Form -->
 
-    <aside class="bg-dark" style="margin-top: 50px;background-color: #2f7ddb;padding: 50px" id="contact">
+    <aside class="bg-dark" style="margin-top: 50px;background-color: #2f7ddb;padding: 50px" >
         <div class="container text-center">
             <div class="call-to-action">
                 <h2 style="color:#ffffff">Click here to join the adventure!</h2><br><br>
@@ -585,8 +843,7 @@
         </div>
     </aside>
 
-
-    <!-- contact -->
+    <!-- Contact -->
     <section id="contact" class="section" style="margin-top: 50px">
         <div class="container">
             <div class="row" style="padding-bottom:50px;">
@@ -595,63 +852,50 @@
                     <hr style="width:200px">
                 </div>
             </div>
-
             <div class="row text-center">
                 <div>
                     <div class="row text-center">
                         <span class="intro">Event Organisers<br/></span>
                     </div>
                     <div class="flex-container-contact">
-                        <div class="col-md-4 text-center">
-                            <h3>lorem ipsum</h3>
-                            <span>groverkg04@gmail.com</span><br/>
+                        <div class="col-md-3 text-center">
+                            <h3>Taran</h3>
                             <i class="fa fa-mobile fa-2x"></i>
                             &nbsp;
-                            <span class="">+91 7200261756</span>
+                            <span class=""><a href="tel:+917299978268">+91 7299978268</a></span>
                         </div>
-                        <div class="col-md-4 text-center">
-                            <h3>lorem ipsum</h3>
-                            <span>namanjha1830@yahoo.co.in</span><br/>
+                        <div class="col-md-3 text-center">
+                            <h3>Shrikesh</h3>
                             <i class="fa fa-mobile fa-2x"></i>
                             &nbsp;
-                            <span class="">+91 9042912220</span>
+                            <span class=""><a href="tel:+918144480706">+91 8144480706</a></span>
                         </div>
-                        <div class="col-md-4 text-center">
-                            <h3>lorem ipsum</h3>
-                            <span>vvchakradhar12@gmail.com</span><br/>
+                        <div class="col-md-3 text-center">
+                            <h3>Sunil</h3>
                             <i class="fa fa-mobile fa-2x"></i>
                             &nbsp;
-                            <span class="">+91 7358560972</span>
+                            <span class=""><a href="tel:+917708014344">+91 7708014344</a></span>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <h3>Srinivas</h3>
+                            <i class="fa fa-mobile fa-2x"></i>
+                            &nbsp;
+                            <span class=""><a href="tel:+919677299116">+91 9677299116</a></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row text-center"><br>
+            <div class="row text-center"><br><br>
                 <div>
                     <div class="row text-center">
                         <span class="intro">Staff Coordinators</span><br/>
                     </div>
                     <div class="flex-container-contact">
-                        <div class="col-md-4 text-center">
-                            <h3>lorem ipsum</h3>
-                            <span>anita.j@vdp.srmuniv.ac.in</span><br/>
-                            <i class="fa fa-mobile fa-2x"></i>
-                            &nbsp;
-                            <span class="">+91 9444028830</span>
+                        <div class="col-md-6 text-center">
+                            <h3>Mrs. Poonkodi</h3>
                         </div>
-                        <div class="col-md-4 text-center">
-                            <h3>lorem ipsum</h3>
-                            <span>benudeepsun.s@vdp.srmuniv.ac.in</span><br/>
-                            <i class="fa fa-mobile fa-2x"></i>
-                            &nbsp;
-                            <span class="">+91 8939789171</span>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <h3>lorem ipsum</h3>
-                            <span>aruna.p@vdp.srmuniv.ac.in</span><br/>
-                            <i class="fa fa-mobile fa-2x"></i>
-                            &nbsp;
-                            <span class="">+91 99500721814</span>
+                        <div class="col-md-6 text-center">
+                            <h3>Mr. Sridhar</h3>
                         </div>
                     </div>
                 </div>
@@ -663,6 +907,10 @@
             </div>
         </div>
     </section>
+
+    <!-- Sponsors -->
+    <!-- Sponsors end -->
+
 
     <div class="container">
         <section id="section-map" class="clearfix">
@@ -686,13 +934,146 @@
 
 </div>
 
-<!-- Bug Buster -->
+<!-- Main Events Modals -->
+<!-- 1) Internet Navigation -->
+<div class="portfolio-modal modal fade" id="InternetNavigation" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Internet Navigation</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#InternetNavigationRules" data-toggle="tab">Rules</a></li>
+                    <li><a href="#InternetNavigationContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="InternetNavigationRules"><br/>
+                        <ul style="text-align:left">
+                            <li>Navigate through the web to link the source & destination with the given clues. Believe
+                                in Google!
+                            </li>
+                            <li>Team of 2</li>
+                            <li>2 rounds</li>
+                            <li>1<sup>st</sup> Round - Eliminator | 8 Questions</li>
+                            <li>2<sup>nd</sup> Round - Final Round</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="InternetNavigationContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>K.R. Ranjith</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9710974039</span><br/><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Saran Raj</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9884267916</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 2) Code Red Content to be changed -->
+<div class="portfolio-modal modal fade" id="CodeRed" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>CodeRed</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#CodeRedRules" data-toggle="tab">Rules</a></li>
+                    <li><a href="#CodeRedContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="CodeRedRules"><br/>
+                        <ul style="text-align:left">
+                            <li>Navigate through the web to link the source & destination with the given clues. Believe
+                                in Google!
+                            </li>
+                            <li>Team of 2</li>
+                            <li>2 rounds</li>
+                            <li>1<sup>st</sup> Round - Eliminator | 8 Questions</li>
+                            <li>2<sup>nd</sup> Round - Final Round</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="CodeRedContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>K.R. Ranjith</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9710974039</span><br/><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Saran Raj</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9884267916</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 3) Spin A Web -->
+<div class="portfolio-modal modal fade" id="SpinAWeb" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Spin A Web</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#SpinAWebRules" data-toggle="tab">Rules</a></li>
+                    <li><a href="#SpinAWebContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="SpinAWebRules"><br/>
+                        <ul style="text-align:left">
+                            <li>A team of 2 members should be formed.</li>
+                            <li>There will be two rounds.</li>
+                            <li>The first round will be of 45 mins where the team may sketch the layout of their
+                                webpage.
+                            </li>
+                            <li>They will be asked to explain the working of teh webpage and the transition of each
+                                elements.
+                            </li>
+                            <li>15 to 20 teams will qualify for round 2 which would go for 2 hours.</li>
+                            <li>The coding should be done in HTML, CSS and Javascript. No templates allowed.</li>
+                            <li>Sublime, Notepad++, Atom or Brackets are the accepted IDE's to import the Jscript
+                                Packages.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="SpinAWebContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Shubhangi Gupta</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9003278198</span><br/><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Praneeta</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 8056275294</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 4) Bug Buster Contacts need to be changed-->
 <div class="portfolio-modal modal fade" id="BugBuster" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <h2>Bug Buster</h2>
-                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
                 <hr>
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#BugBusterRules" data-toggle="tab">Rules</a></li>
@@ -703,9 +1084,15 @@
                         <ul style="text-align:left">
                             <li>Two member per team.</li>
                             <li>Consists of two rounds.</li>
-                            <li>Eliminator: You'll be given a set of question. First 10 teams to arrive with the correct answers proceeds to the round</li>
-                            <li>Finals: One tough question - Debug it - Team to come up with the right answer first wins</li>
-                            <li>No usage of computers or any such electronic devices - Use your mind, a pen &amp; paper</li>
+                            <li>Eliminator: You'll be given a set of question. First 10 teams to arrive with the correct
+                                answers proceeds to the round
+                            </li>
+                            <li>Finals: One tough question - Debug it - Team to come up with the right answer first
+                                wins
+                            </li>
+                            <li>No usage of computers or any such electronic devices - Use your mind, a pen &amp;
+                                paper
+                            </li>
                             <li> Team that didn't comply with the above rules shall be disqualified.</li>
 
                         </ul>
@@ -728,38 +1115,54 @@
     </div>
 </div>
 
-<!-- Spin A Web -->
-<div class="portfolio-modal modal fade" id="SpinAWeb" tabindex="-1" aria-hidden="true">
+<!-- 5) Gaming -->
+<div class="portfolio-modal modal fade" id="Gaming" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h2>Spin A Web</h2>
-                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
+                <h2>Gaming</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
                 <hr>
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#SpinAWebRules" data-toggle="tab">Rules</a></li>
-                    <li><a href="#SpinAWebContact" data-toggle="tab">Contact</a></li>
+                    <li class="active"><a href="#GamingRules" data-toggle="tab">Rules</a></li>
+                    <li><a href="#PCGames" data-toggle="tab">PC Games</a></li>
+                    <li><a href="#MobileGames" data-toggle="tab">Mobile Games</a></li>
+                    <li><a href="#GamingContact" data-toggle="tab">Contact</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="SpinAWebRules"><br/>
+                    <div class="tab-pane active" id="GamingRules"><br/>
                         <ul style="text-align:left">
-                            <li>A team of 2 members should be formed.</li>
-                            <li>There will be two rounds.</li>
-                            <li>The first round will be of 45 mins where the team may sketch the layout of their webpage.</li>
-                            <li>They will be asked to explain the working of teh webpage and the transition of each elements.</li>
-                            <li>15 to 20 teams will qualify for round 2 which would go for 2 hours.</li>
-                            <li>The coding should be done in HTML, CSS and Javascript. No templates allowed.</li>
-                            <li>Sublime, Notepad++, Atom or Brackets are the accepted IDE's to import the Jscript Packages.</li>
+                            <li>Prelims will be held on the first day for all the games.</li>
+                            <li>A lifeline will be provided on re-registering so that the game may be resumed from the
+                                current round.
+                            </li>
+                            <li>Finals for all the games will be held on the second day.</li>
                         </ul>
                     </div>
-                    <div class="tab-pane" id="SpinAWebContact" align="center" style="padding:20px;">
+                    <div class="tab-pane" id="PCGames" align="center" style="padding:20px;">
+                        <ul style="text-align:left">
+                            <li>Fifa 16</li>
+                            <li>Dota2</li>
+                            <li>Counter Strike 1.6</li>
+                            <li>NFS</li>
+                            <li>COD</li>
+                            <li>Injustice</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="MobileGames" align="center" style="padding:20px;">
+                        <ul style="text-align:left">
+                            <li>Mini Militia</li>
+                            <li>Chain Reaction</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="GamingContact" align="center" style="padding:20px;">
                         <h4>Event Co-Ordinators</h4><br/>
                         <i class="fa fa-user fa-2x"></i>&nbsp;
-                        <span class="title"><b>Kartik Grover</b></span><br/>
-                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 7200261756</span><br/><br/>
+                        <span class="title"><b>Monish</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9940158471</span><br/><br/>
                         <i class="fa fa-user fa-2x"></i>&nbsp;
-                        <span class="title"><b>Naman Jha</b></span><br/>
-                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9042912220</span><br/><br/>
+                        <span class="title"><b>Varun</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 </span><br/><br/>
                     </div>
                     <br/>
                     <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
@@ -770,13 +1173,148 @@
     </div>
 </div>
 
+<!-- 6) Adzap (Actout)-->
+<div class="portfolio-modal modal fade" id="Adzap" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Adzap</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#AdzapRule" data-toggle="tab">Rules</a></li>
+                    <li><a href="#AdzapContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="AdzapRule"><br/>
+                        <ul style="text-align:left">
+                            <li>A team of 3 to 7 members should be formed.</li>
+                            <li>The team is expected to coordinate and advertise products given to them by the judges.
+                            </li>
+                            <li>Props may be used for advertisement purpose.</li>
+                            <li>The product names will be given to the team 5 min prior to the event.</li>
+                            <li>Use of vulgar language or acts will lead to disqualification.</li>
+                            <li>The act may be followed by Q&A session.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="AdzapContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Shweta Barua</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9500165738</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 7) IO Event need to be changed-->
+<div class="portfolio-modal modal fade" id="IOEvent" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Adzap</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#IOEventRule" data-toggle="tab">Rules</a></li>
+                    <li><a href="#IOEventContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="IOEventRule"><br/>
+                        <ul style="text-align:left">
+                            <li>A team of 3 to 7 members should be formed.</li>
+                            <li>The team is expected to coordinate and advertise products given to them by the judges.
+                            </li>
+                            <li>Props may be used for advertisement purpose.</li>
+                            <li>The product names will be given to the team 5 min prior to the event.</li>
+                            <li>Use of vulgar language or acts will lead to disqualification.</li>
+                            <li>The act may be followed by Q&A session.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="IOEventContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Shweta Barua</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9500165738</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 8) Paper Dropbox -->
+<div class="portfolio-modal modal fade" id="PaperDropbox" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Paper Dropbox</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#PaperDropboxRule" data-toggle="tab">Rules</a></li>
+                    <li><a href="#PaperDropboxContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="PaperDropboxRule"><br/>
+                        <ul style="text-align:left">
+                            <li>Participants must be present at the venue 10 mins before the commencement of the event.
+                                Late comers will not be entertained.
+                            </li>
+                            <li>Participants should be dressed in formals.</li>
+                            <li>Participants may present for a total time of 10 mins. There will be a warning bell at
+                                the end of 7 mins. Exceeding time limit may lead to negative marking.
+                            </li>
+                            <li>Topic chosen must be purely 'technical' and should be yield minimum of 50 results on
+                                browsing. Topic should be belong to given Computer Science domain and should not be
+                                vague.
+                            </li>
+                            <li>There will be Question & Answer session following the presentation in which the
+                                participant is expected to answer questions posted by judges.
+                            </li>
+                            <li>Presentations aids such as powerpoint presentation is accepted. Videos, graphics or
+                                animation content should not be be present.
+                            </li>
+                            <li>Weightage is given to presentation and communication skills of participants.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="PaperDropboxContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Rubeena</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9962176462</span><br/><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Priyanka</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9952029943</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Events End -->
+
+<!-- Fun Events -->
+
 <!-- Shipwreck -->
 <div class="portfolio-modal modal fade" id="Shipwreck" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <h2>Shipwreck</h2>
-                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
                 <hr>
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#ShipwreckRules" data-toggle="tab">Rules</a></li>
@@ -785,11 +1323,15 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="ShipwreckRules"><br/>
                         <ul style="text-align:left">
-                            <li>A personality will be given to the participant on spot. The participant will have to continue the judges as to why he/she should be saved from the sinking ship.</li>
+                            <li>A personality will be given to the participant on spot. The participant will have to
+                                continue the judges as to why he/she should be saved from the sinking ship.
+                            </li>
                             <li>It is an individual event.</li>
                             <li>The participant is expected to speak for 3 mins.</li>
                             <li>Language is restricted to English only.</li>
-                            <li>Participants are expected to answer questions posed by the judges based on their performance.</li>
+                            <li>Participants are expected to answer questions posed by the judges based on their
+                                performance.
+                            </li>
                         </ul>
                     </div>
                     <div class="tab-pane" id="ShipwreckContact" align="center" style="padding:20px;">
@@ -810,30 +1352,30 @@
     </div>
 </div>
 
-<!-- Adzap -->
-<div class="portfolio-modal modal fade" id="Adzap" tabindex="-1" aria-hidden="true">
+<!-- Connections -->
+<div class="portfolio-modal modal fade" id="Connections" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h2>Adzap</h2>
-                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
+                <h2>Gaming</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
                 <hr>
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#AdzapRule" data-toggle="tab">Rules</a></li>
-                    <li><a href="#AdzapContact" data-toggle="tab">Contact</a></li>
+                    <li class="active"><a href="#ConnectionsRules" data-toggle="tab">Rules</a></li>
+                    <li><a href="#ConnectionsContact" data-toggle="tab">Contact</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="AdzapRule"><br/>
+                    <div class="tab-pane active" id="ConnectionsRules"><br/>
                         <ul style="text-align:left">
-                            <li>A team of 3 to 7 members should be formed.</li>
-                            <li>The team is expected to coordinate and advertise products given to them by the judges.</li>
-                            <li>Props may be used for advertisement purpose.</li>
-                            <li>The product names will be given to the team 5 min prior to the event.</li>
-                            <li>Use of vulgar language or acts will lead to disqualification.</li>
-                            <li>The act may be followed by Q&A session.</li>
+                            <li>Each team should consist of two members.</li>
+                            <li>The event will consist of two rounds.</li>
+                            <li>Teams will be given sets of four pictures in the first round and teams are expected to
+                                make logical connections among the pictures to frame words or phrases.
+                            </li>
+                            <li>Teams which qualify for the second round will be given set of two pictures.</li>
                         </ul>
                     </div>
-                    <div class="tab-pane" id="AdzapContact" align="center" style="padding:20px;">
+                    <div class="tab-pane" id="ConnectionsContact" align="center" style="padding:20px;">
                         <h4>Event Co-Ordinators</h4><br/>
                         <i class="fa fa-user fa-2x"></i>&nbsp;
                         <span class="title"><b>Kartik Grover</b></span><br/>
@@ -851,47 +1393,6 @@
     </div>
 </div>
 
-<!-- Paper Dropbox -->
-<div class="portfolio-modal modal fade" id="PaperDropbox" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h2>Paper Dropbox</h2>
-                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
-                <hr>
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#PaperDropboxRule" data-toggle="tab">Rules</a></li>
-                    <li><a href="#PaperDropboxContact" data-toggle="tab">Contact</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="PaperDropboxRule"><br/>
-                        <ul style="text-align:left">
-                            <li>Participants must be present at the venue 10 mins before the commencement of the event. Late comers will not be entertained.</li>
-                            <li>Participants should be dressed in formals.</li>
-                            <li>Participants may present for a total time of 10 mins. There will be a warning bell at the end of 7 mins. Exceeding time limit may lead to negative marking.</li>
-                            <li>Topic chosen must be purely 'technical' and should be yield minimum of 50 results on browsing. Topic should be belong to given Computer Science domain and should not be vague.</li>
-                            <li>There will be Question & Answer session following the presentation in which the participant is expected to answer questions posted by judges.</li>
-                            <li>Presentations aids such as powerpoint presentation is accepted. Videos, graphics or animation content should not be be present.</li>
-                            <li>Weightage is given to presentation and communication skills of participants.</li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane" id="PaperDropboxContact" align="center" style="padding:20px;">
-                        <h4>Event Co-Ordinators</h4><br/>
-                        <i class="fa fa-user fa-2x"></i>&nbsp;
-                        <span class="title"><b>Kartik Grover</b></span><br/>
-                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 7200261756</span><br/><br/>
-                        <i class="fa fa-user fa-2x"></i>&nbsp;
-                        <span class="title"><b>Naman Jha</b></span><br/>
-                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9042912220</span><br/><br/>
-                    </div>
-                    <br/>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -922,28 +1423,28 @@
                     <div class="row">
                         <!--<label class="checkbox-inline no_indent"  id="events" style="display: flex">-->
                         <div class="col-md-3">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Google It
+                            <input type="checkbox" name="events[]" value="Google_It"> Google It
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Code Red
+                            <input type="checkbox" name="events[]" value="Code_Red"> Code Red
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Bug Buster
+                            <input type="checkbox" name="events[]" value="Bug_Buster"> Bug Buster
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Act Out
+                            <input type="checkbox" name="events[]" value="Act_Out"> Act Out
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Spin a Web
+                            <input type="checkbox" name="events[]" value="Spin_a_Web"> Spin a Web
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Paper Dropbox
+                            <input type="checkbox" name="events[]" value="Paper_Dropbox"> Paper Dropbox
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Venatio
+                            <input type="checkbox" name="events[]" value="Venatio"> Venatio
                         </div>
                         <div class="col-md-3">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> The I/O Event
+                            <input type="checkbox" name="events[]" value="The_I/O_Event"> The I/O Event
                         </div>
                         <!--</label>--></div>
                     <!--<input type="checkbox" name="loggedin" value="true">&nbsp Keep me logged in<br>
@@ -1026,7 +1527,73 @@
 </script>-->
 
 <script>
-    particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
+            "color": {"value": "#ffffff"},
+            "shape": {
+                "type": "circle",
+                "stroke": {"width": 0, "color": "#000000"},
+                "polygon": {"nb_sides": 5},
+                "image": {"src": "img/github.svg", "width": 100, "height": 100}
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {"enable": false, "speed": 1, "opacity_min": 0.1, "sync": false}
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}
+            },
+            "line_linked": {"enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1},
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {"enable": true, "mode": "repulse"},
+                "onclick": {"enable": true, "mode": "push"},
+                "resize": true
+            },
+            "modes": {
+                "grab": {"distance": 400, "line_linked": {"opacity": 1}},
+                "bubble": {"distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3},
+                "repulse": {"distance": 200, "duration": 0.4},
+                "push": {"particles_nb": 4},
+                "remove": {"particles_nb": 2}
+            }
+        },
+        "retina_detect": true
+    });
+    var count_particles, stats, update;
+    stats = new Stats;
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector('.js-count-particles');
+    update = function () {
+        stats.begin();
+        stats.end();
+        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+            count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+    ;
 </script>
 
 
