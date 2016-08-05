@@ -11,6 +11,95 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <style>
+        /*.container{
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 0;
+            padding-right: 15px;
+        }
+        @media only screen and (max-width: 768px) {
+            .container{
+                margin-right: auto;
+                margin-left: auto;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }*/
+        /*.container-fluid {
+            padding: 0px;
+        }
+        @media (max-width: 797px) {
+            body {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }*/
+        /* ---- reset ---- */
+
+        /*body {
+            margin: 0;
+            font:normal 75% Arial, Helvetica, sans-serif;
+        }*/
+
+        canvas {
+            display: block;
+            vertical-align: bottom;
+        }
+
+        /* ---- particles.js container ---- */
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #2c3e50;
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            /*background-attachment: fixed;*/
+        }
+
+        /* ---- stats.js ---- */
+
+        .count-particles{
+            background: #000022;
+            position: absolute;
+            top: 48px;
+            left: 0;
+            width: 80px;
+            color: #13E8E9;
+            font-size: .8em;
+            text-align: left;
+            text-indent: 4px;
+            line-height: 14px;
+            padding-bottom: 2px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .js-count-particles{
+            font-size: 1.1em;
+        }
+
+        #stats,
+        .count-particles{
+            -webkit-user-select: none;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        #stats{
+            border-radius: 3px 3px 0 0;
+            overflow: hidden;
+        }
+
+        .count-particles{
+            border-radius: 0 0 3px 3px;
+        }
+    </style>
+
+    <style>
         @media only screen and (max-width: 768px) {
             .header__container h2 {
                 font-size: 90px;
@@ -141,7 +230,7 @@
 
         html, body {
             height: 100%;
-            background-color: #2c3e50;
+            /*background-color: #2c3e50;*//*Removed for new particle*/
         }
 
         .fill {
@@ -178,6 +267,7 @@
 
         .header__container {
             display: inline-block;
+            position: relative;/*added for new particle*/
             max-width: 100%;
             margin-top: 150px;/*200*/
             text-align: center;
@@ -297,12 +387,16 @@
     </div>
   </div>-->
 
+<!-- particles.js container -->
+
 <!-- Particle Header -->
 
 <div class="container-fluid fill header__wrapper header__wrapper--particler" style="height: 700px;">
-    <canvas class="header__canvas" id="particler-instance"></canvas>
+    <!--<canvas class="header__canvas" id="particler-instance"></canvas>-->
+    <div id="particles-js" style="margin-top: -50px"></div> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
     <div id="header">
         <header class="header__container">
+            <!--<img src="srm_logo.png" style="float: left;position: absolute">-->
             <h2 class="first">SRM University, Vadapalani Presents</h2>
             <h2 style="color: #ffffff">Übertech'16</h2>
             <h2>A National Level Symposium</h2>
@@ -365,7 +459,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3 portfolio-item">
-                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#SpinAWeb" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -375,7 +469,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3 portfolio-item">
-                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#BugBuster" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -385,7 +479,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3 portfolio-item">
-                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -395,7 +489,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3 portfolio-item">
-                    <a href="#workshopModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#Adzap" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -544,56 +638,196 @@
 
 </div>
 
-<!-- Workshop Modal 1 -->
-<div class="portfolio-modal modal fade" id="workshopModal1" tabindex="-1" aria-hidden="true">
+<!-- Bug Buster -->
+<div class="portfolio-modal modal fade" id="BugBuster" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h2>Mind Wave Control Robot</h2>
-                Dates : 9<sup>th</sup> & 10<sup>th</sup> March 2016<br/>
-                Cost : Rs. 1200 per head - Group of 5
+                <h2>Bug Buster</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
                 <hr>
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#Highlights5" data-toggle="tab">Highlights</a></li>
-                    <li><a href="#rules5" data-toggle="tab">Rules</a></li>
-                    <li><a href="#Partnership5" data-toggle="tab">Partnership</a></li>
-                    <li><a href="#contact5" data-toggle="tab">Contact</a></li>
+                    <li class="active"><a href="#BugBusterRules" data-toggle="tab">Rules</a></li>
+                    <li><a href="#BugBusterContact" data-toggle="tab">Contact</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="rules5"><br/>
+                    <div class="tab-pane active" id="BugBusterRules"><br/>
                         <ul style="text-align:left">
-                            <li>The maximum number of team members in a team is limited to 5. They may belong to
-                                different institutions.
-                            </li>
-                            <li>All team members must carry their institute identity cards for event registration.</li>
-                            <li>One laptop per team is complusary.</li>
+                            <li>Two member per team.</li>
+                            <li>Consists of two rounds.</li>
+                            <li>Eliminator: You'll be given a set of question. First 10 teams to arrive with the correct answers proceeds to the round</li>
+                            <li>Finals: One tough question - Debug it - Team to come up with the right answer first wins</li>
+                            <li>No usage of computers or any such electronic devices - Use your mind, a pen &amp; paper</li>
+                            <li> Team that didn't comply with the above rules shall be disqualified.</li>
 
                         </ul>
                     </div>
-                    <div class="tab-pane" id="Highlights5" align="center">
-                        <ul style="text-align:left;padding:50px 20px 20px 20px;"><u>Topics Covered</u>
-                            <li>Mind control robot</li>
-                            <li>Speed control based on mind waves</li>
-                            <li>Attention Measurement</li>
-                            <li>Mediation Mesurement</li>
-                            <li>Blink control robot</li>
-                            <li>Pc control robot</li>
+                    <div class="tab-pane" id="BugBusterContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Kartik Grover</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 7200261756</span><br/><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Naman Jha</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9042912220</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Spin A Web -->
+<div class="portfolio-modal modal fade" id="SpinAWeb" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Spin A Web</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#SpinAWebRules" data-toggle="tab">Rules</a></li>
+                    <li><a href="#SpinAWebContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="SpinAWebRules"><br/>
+                        <ul style="text-align:left">
+                            <li>A team of 2 members should be formed.</li>
+                            <li>There will be two rounds.</li>
+                            <li>The first round will be of 45 mins where the team may sketch the layout of their webpage.</li>
+                            <li>They will be asked to explain the working of teh webpage and the transition of each elements.</li>
+                            <li>15 to 20 teams will qualify for round 2 which would go for 2 hours.</li>
+                            <li>The coding should be done in HTML, CSS and Javascript. No templates allowed.</li>
+                            <li>Sublime, Notepad++, Atom or Brackets are the accepted IDE's to import the Jscript Packages.</li>
                         </ul>
                     </div>
-                    <div class="tab-pane" id="Partnership5" align="center">
-                        <ul style="text-align:left;padding:50px 20px 20px 20px;">In Association with
-                            <li>AMALGAM , IIT Madras</li>
-                            <li>Robokart.com</li>
-                            <li>ARK Tech</li>
-                        </ul>
-                        <ul style="text-align:left;padding:20px 20px 20px 20px;">Certificates
-                            <li>All the students will get participation certificate from ARK Tech Mumbai in association
-                                with AMALGAM,IIT Madras
-                            </li>
-                            <li>Winning team will get a chance to represent at National Robotics Championship.</li>
+                    <div class="tab-pane" id="SpinAWebContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Kartik Grover</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 7200261756</span><br/><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Naman Jha</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9042912220</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Shipwreck -->
+<div class="portfolio-modal modal fade" id="Shipwreck" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Shipwreck</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#ShipwreckRules" data-toggle="tab">Rules</a></li>
+                    <li><a href="#ShipwreckContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="ShipwreckRules"><br/>
+                        <ul style="text-align:left">
+                            <li>A personality will be given to the participant on spot. The participant will have to continue the judges as to why he/she should be saved from the sinking ship.</li>
+                            <li>It is an individual event.</li>
+                            <li>The participant is expected to speak for 3 mins.</li>
+                            <li>Language is restricted to English only.</li>
+                            <li>Participants are expected to answer questions posed by the judges based on their performance.</li>
                         </ul>
                     </div>
-                    <div class="tab-pane" id="contact5" align="center" style="padding:20px;">
+                    <div class="tab-pane" id="ShipwreckContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Kartik Grover</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 7200261756</span><br/><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Naman Jha</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9042912220</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Adzap -->
+<div class="portfolio-modal modal fade" id="Adzap" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Adzap</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#AdzapRule" data-toggle="tab">Rules</a></li>
+                    <li><a href="#AdzapContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="AdzapRule"><br/>
+                        <ul style="text-align:left">
+                            <li>A team of 3 to 7 members should be formed.</li>
+                            <li>The team is expected to coordinate and advertise products given to them by the judges.</li>
+                            <li>Props may be used for advertisement purpose.</li>
+                            <li>The product names will be given to the team 5 min prior to the event.</li>
+                            <li>Use of vulgar language or acts will lead to disqualification.</li>
+                            <li>The act may be followed by Q&A session.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="AdzapContact" align="center" style="padding:20px;">
+                        <h4>Event Co-Ordinators</h4><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Kartik Grover</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 7200261756</span><br/><br/>
+                        <i class="fa fa-user fa-2x"></i>&nbsp;
+                        <span class="title"><b>Naman Jha</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9042912220</span><br/><br/>
+                    </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Paper Dropbox -->
+<div class="portfolio-modal modal fade" id="PaperDropbox" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Paper Dropbox</h2>
+                Dates : 26<sup>th</sup> & 27<sup>th</sup> March 2016<br/>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#PaperDropboxRule" data-toggle="tab">Rules</a></li>
+                    <li><a href="#PaperDropboxContact" data-toggle="tab">Contact</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="PaperDropboxRule"><br/>
+                        <ul style="text-align:left">
+                            <li>Participants must be present at the venue 10 mins before the commencement of the event. Late comers will not be entertained.</li>
+                            <li>Participants should be dressed in formals.</li>
+                            <li>Participants may present for a total time of 10 mins. There will be a warning bell at the end of 7 mins. Exceeding time limit may lead to negative marking.</li>
+                            <li>Topic chosen must be purely 'technical' and should be yield minimum of 50 results on browsing. Topic should be belong to given Computer Science domain and should not be vague.</li>
+                            <li>There will be Question & Answer session following the presentation in which the participant is expected to answer questions posted by judges.</li>
+                            <li>Presentations aids such as powerpoint presentation is accepted. Videos, graphics or animation content should not be be present.</li>
+                            <li>Weightage is given to presentation and communication skills of participants.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="PaperDropboxContact" align="center" style="padding:20px;">
                         <h4>Event Co-Ordinators</h4><br/>
                         <i class="fa fa-user fa-2x"></i>&nbsp;
                         <span class="title"><b>Kartik Grover</b></span><br/>
@@ -742,6 +976,10 @@
         });
     });
 </script>-->
+
+<script>
+    particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+</script>
 
 
 </body>
