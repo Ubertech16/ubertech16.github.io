@@ -1037,14 +1037,16 @@
 </script>-->
 
 <script>
-    $.ajax({
-        url: "https://api.ubertech.io/v1/register",
-        type: 'POST',
-        dataType: 'json', // added data type
-        success: function(res) {
-            console.log(res);
-            alert(res);
-        }
+    $('#get-data').click(function () {
+        $.ajax({
+            url: "https://api.ubertech.io/v1/register",
+            type: 'POST',
+            dataType: 'json', // added data type
+            success: function (res) {
+                console.log(res);
+                alert(res);
+            }
+        });
     });
 </script>
 
