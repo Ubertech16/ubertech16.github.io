@@ -11,6 +11,72 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <style>
+        .btn-circle {
+            width: 70px;
+            height: 70px;
+            margin-top: 15px;
+            padding: 7px 16px;
+            border: 2px solid #fff;
+            border-radius: 100%!important;
+            font-size: 40px;
+            color: #fff;
+            background: 0 0;
+            -webkit-transition: background .3s ease-in-out;
+            -moz-transition: background .3s ease-in-out;
+            transition: background .3s ease-in-out
+        }
+
+        .btn-circle:focus,
+        .btn-circle:hover {
+            outline: 0;
+            color: #fff;
+            background: rgba(255, 255, 255, .1)
+        }
+
+        .btn-circle i.animated {
+            -webkit-transition-property: -webkit-transform;
+            -webkit-transition-duration: 1s;
+            -moz-transition-property: -moz-transform;
+            -moz-transition-duration: 1s
+        }
+
+        .btn-circle:hover i.animated {
+            -webkit-animation-name: pulse;
+            -moz-animation-name: pulse;
+            -webkit-animation-duration: 1.5s;
+            -moz-animation-duration: 1.5s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear
+        }
+
+        @-webkit-keyframes pulse {
+        0,
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1)
+        }
+        50% {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2)
+        }
+        }
+
+        @-moz-keyframes pulse {
+        0,
+        100% {
+            -moz-transform: scale(1);
+            transform: scale(1)
+        }
+        50% {
+            -moz-transform: scale(1.2);
+            transform: scale(1.2)
+        }
+        }
+    </style>
+
+    <style>
         /*Flex cards for fun events*/
         .container {
             max-width: 1100px;
@@ -529,74 +595,6 @@
 
 </head>
 <body>
-<!--<div class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a href="../" class="navbar-brand">Ubertech</a>
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
-          <ul class="dropdown-menu" aria-labelledby="themes">
-            <li><a href="../default/">Default</a></li>
-            <li class="divider"></li>
-            <li><a href="../cerulean/">Cerulean</a></li>
-            <li><a href="../cosmo/">Cosmo</a></li>
-            <li><a href="../cyborg/">Cyborg</a></li>
-            <li><a href="../darkly/">Darkly</a></li>
-            <li><a href="../flatly/">Flatly</a></li>
-            <li><a href="../journal/">Journal</a></li>
-            <li><a href="../lumen/">Lumen</a></li>
-            <li><a href="../paper/">Paper</a></li>
-            <li><a href="../readable/">Readable</a></li>
-            <li><a href="../sandstone/">Sandstone</a></li>
-            <li><a href="../simplex/">Simplex</a></li>
-            <li><a href="../slate/">Slate</a></li>
-            <li><a href="../spacelab/">Spacelab</a></li>
-            <li><a href="../superhero/">Superhero</a></li>
-            <li><a href="../united/">United</a></li>
-            <li><a href="../yeti/">Yeti</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="../help/">Help</a>
-        </li>
-        <li>
-          <a href="http://news.bootswatch.com">Blog</a>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Flatly <span class="caret"></span></a>
-          <ul class="dropdown-menu" aria-labelledby="download">
-            <li><a href="http://jsfiddle.net/bootswatch/jmg3gykg/">Open Sandbox</a></li>
-            <li class="divider"></li>
-            <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
-            <li><a href="./bootstrap.css">bootstrap.css</a></li>
-            <li class="divider"></li>
-            <li><a href="./variables.less">variables.less</a></li>
-            <li><a href="./bootswatch.less">bootswatch.less</a></li>
-            <li class="divider"></li>
-            <li><a href="./_variables.scss">_variables.scss</a></li>
-            <li><a href="./_bootswatch.scss">_bootswatch.scss</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
-        <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>
-      </ul>
-
-
-      </div>
-    </div>
-  </div>-->
-
 <!-- particles.js container -->
 
 <!-- Particle Header -->
@@ -618,6 +616,9 @@
                 <a href="#" class="btnn blue" data-toggle="modal" data-target="#RegForm"><span class="underline"
                                                                                                style="color: #ffffff;">Register</span></a>
             </div>
+            <a href="#about" class="btn btn-circle page-scroll">
+                <i class="fa fa-angle-double-down animated"></i>
+            </a>
         </header>
     </div>
 </div>
@@ -625,7 +626,7 @@
 <div class="white" style="background-color: #ffffff">
 
     <!-- About -->
-    <section id="" class="section why" style="padding: 50px 50px">
+    <section id="about" class="section why" style="padding: 50px 50px">
         <div class="container">
             <h2 class="title text-center" style="color:#F16664">Get Ready for Übertech'16!</h2>
             <div class="flex-container">
@@ -847,7 +848,7 @@
                 <div>
                     <div class="flex-container-contact">
                         <div class="col-md-6 text-center">
-                            <h3>Kiwi Programming</h3>
+                            <h3>Android Development</h3>
                         </div>
                         <div class="col-md-6 text-center">
                             <h3>White Hat Hackers Club</h3>
@@ -1525,7 +1526,20 @@
                     <input type="text" class="form-control" name="year" placeholder="Year" title="Year" required/><br>
                     <input type="text" class="form-control" name="college" placeholder="College" title="College Name"
                            required/><br>
-                    <label>Select Events: (You can register for multiple events)</label>
+                    <label>Accomodation (Inform Before 20th August)</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="Yes" checked>
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="No">
+                            No
+                        </label>
+                    </div>
+                    <label style="font-size: 14px">Select Events: (You can register for multiple events) Common Registration Fee: Rs 150</label>
                     <div class="row">
                         <div class="col-md-3">
                             <input type="checkbox" name="events[]" value="Google_It"> Google It
@@ -1545,12 +1559,6 @@
                         <div class="col-md-3">
                             <input type="checkbox" name="events[]" value="Paper_Dropbox"> Paper Dropbox
                         </div>
-                        <!--<div class="col-md-3">
-                            <input type="checkbox" name="events[]" value="Venatio"> Venatio
-                        </div>
-                        <div class="col-md-3">
-                            <input type="checkbox" name="events[]" value="The_I/O_Event"> The I/O Event
-                        </div>-->
                     </div>
                     <br>
                     <input type="submit" href="#" class="btn btn-primary" name="btn_log" value="Register"/>
