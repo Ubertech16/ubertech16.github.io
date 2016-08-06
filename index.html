@@ -11,6 +11,78 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <style>
+        .cd-container {
+            width: 90%;
+            max-width: 768px;
+            margin: 2em auto
+        }
+
+        .cd-container::after {
+            content: '';
+            display: table;
+            clear: both
+        }
+
+        .cd-top {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            position: fixed;
+            bottom: 80px;
+            right: 10px;
+        / box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+            overflow: hidden;
+            text-indent: 100%;
+            white-space: nowrap;
+            background: url(Img/cd-top-arrow.svg) center 50% no-repeat #5d8081;
+            visibility: hidden;
+            opacity: 0;
+            border-radius: 50px;
+            -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+            -moz-transition: opacity .3s 0s, visibility 0s .3s;
+            transition: opacity .3s 0s, visibility 0s .3s
+        }
+
+        .cd-top.cd-fade-out,
+        .cd-top.cd-is-visible,
+        .no-touch .cd-top:hover {
+            -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+            -moz-transition: opacity .3s 0s, visibility 0s 0s;
+            transition: opacity .3s 0s, visibility 0s 0s
+        }
+
+        .cd-top.cd-is-visible {
+            visibility: visible;
+            opacity: 1
+        }
+
+        .cd-top.cd-fade-out {
+            opacity: 1
+        }
+
+        .no-touch .cd-top:hover {
+            background-color: #5d8081;
+            opacity: 1
+        }
+
+        @media only screen and (min-width:768px) {
+            .cd-top {
+                right: 20px;
+                bottom: 20px
+            }
+        }
+
+        @media only screen and (min-width:1024px) {
+            .cd-top {
+                height: 60px;
+                width: 60px;
+                right: 30px;
+                bottom: 50px
+            }
+        }
+    </style>
+
+    <style>
         .btn-circle {
             width: 70px;
             height: 70px;
@@ -939,10 +1011,6 @@
         </div>
     </section>
 
-    <!-- Sponsors -->
-    <!-- Sponsors end -->
-
-
     <div class="container">
         <section id="section-map" class="clearfix">
             <iframe id="map_canvas1"
@@ -955,13 +1023,16 @@
             </small>
         </section>
     </div>
+
+    <!-- Scroll to Top -->
+    <a href="#0" class="cd-top"></a>
+
     <!-- ******FOOTER****** -->
     <div id="footer" class="text-center" style="margin-top: 50px">
         <div class="container">
             <p>Copyright &copy; Ubertech'16. All rights reserved.</p>
         </div>
     </div>
-
 
 </div>
 
@@ -1700,6 +1771,22 @@
     };
     requestAnimationFrame(update);
     ;
+</script>
+
+<script>
+    jQuery(document).ready(function(o) {
+        var l = 300,
+                s = 4e3,
+                c = 700,
+                d = o(".cd-top");
+        o(window).scroll(function() {
+            o(this).scrollTop() > l ? d.addClass("cd-is-visible") : d.removeClass("cd-is-visible cd-fade-out"), o(this).scrollTop() > s && d.addClass("cd-fade-out")
+        }), d.on("click", function(l) {
+            l.preventDefault(), o("body,html").animate({
+                scrollTop: 0
+            }, c)
+        })
+    });
 </script>
 
 
