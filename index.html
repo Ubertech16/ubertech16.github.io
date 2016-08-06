@@ -916,7 +916,7 @@
                 <h4 class="modal-title" id="myModalLabel">Registration Form</h4>
             </div>
             <div class="modal-body">
-                <form action="" method="post" id="get-data">
+                <form onSubmit="return send();">
                     <input type="text" class="form-control" name="name" placeholder="Name" title="Name" required/><br>
                     <input type="text" class="form-control" name="regId" placeholder="Registration Number"
                            title="Registration Number" required/><br>
@@ -1036,7 +1036,7 @@
     });
 </script>-->
 
-<script>
+<!--<script>
     $('#get-data').click(function () {
         $.ajax({
             type: "POST",
@@ -1051,6 +1051,22 @@
             }
         });
     });
+</script>-->
+
+<script>
+    function send() {
+        //alert("Hello World");
+        $.ajax
+        ({
+            type: "post",
+            url: "https://api.ubertech.io/v1/register",
+            dataType: "json",
+            contentType: "application/json; charset=UTF-8",
+            data: JSON.stringify({name: "Dennis", year: {college: "Dub", email: "IE"}})
+        }).done(function (data) {
+            alert("ajax callback response:" + data);
+        });
+    }
 </script>
 
 </body>
