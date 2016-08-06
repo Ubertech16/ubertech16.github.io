@@ -916,7 +916,7 @@
                 <h4 class="modal-title" id="myModalLabel">Registration Form</h4>
             </div>
             <div class="modal-body">
-                <form action="https://api.ubertech.io/v1/register" method="post" >
+                <form action="" method="post" id="get-data">
                     <input type="text" class="form-control" name="name" placeholder="Name" title="Name" required/><br>
                     <input type="text" class="form-control" name="regId" placeholder="Registration Number"
                            title="Registration Number" required/><br>
@@ -962,7 +962,7 @@
                         </div>
                     </div>
                     <br>
-                    <input type="submit" href="#" id="get-data" class="btn btn-primary" name="btn_log" value="Register"/>
+                    <input type="submit" href="#"  class="btn btn-primary" name="btn_log" value="Register"/>
                 </form>
             </div>
         </div>
@@ -1039,12 +1039,15 @@
 <script>
     $('#get-data').click(function () {
         $.ajax({
+            type: "POST",
             url: "https://api.ubertech.io/v1/register",
-            type: 'POST',
-            dataType: 'json', // added data type
-            success: function (res) {
-                console.log(res);
-                alert(res);
+            data:JSON.stringify({"g":"jh"}),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data){ console.log(data.data);
+            },
+            failure: function(errMsg) {
+                console.log(errMsg);
             }
         });
     });
