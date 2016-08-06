@@ -1,4 +1,4 @@
-<!-- Developed By Ritesh Hota, Abhishek Dabholkar, Shai Krish & Vishal Parameswaran  | DesignX Club-->
+<!-- Developed By Ritesh Hota, Abhishek Dabholkar, Shai Krish & Vishal Parameswaran  | DesignX Club -->
 <!DOCTYPE html>
 <html lang="en-us" itemscope itemtype="http://schema.org/Article">
 <head>
@@ -999,6 +999,43 @@
 
 <!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
 <script data-align="right" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#607D8B" data-apps="JTdCJTIydHdpdHRlciUyMjolMjJAU1JNVWJlcnRlY2glMjIsJTIyd2hhdHNhcHAlMjI6JTIyKzkxNzI5OTk3ODI2OCUyMiwlMjJzbXMlMjI6JTIyKzkxODE0NDQ4MDcwNiUyMiwlMjJwaG9uZSUyMjolMjIrOTE4MTQ0NDgwNzA2JTIyLCUyMmZhY2Vib29rJTIyOiUyMmh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9ldmVudHMvMTc4NzA5MjY1MTU3NzI4NS8lMjIsJTIyZW1haWwlMjI6JTIydWJlcnRlY2gyazE2QGdtYWlsLmNvbSUyMiU3RA=="></script>
+
+<script>
+    $(document).ready(function(){
+        var messageType = "3";
+        //var cookie_name = "username";
+        //var cookie_name2 = "password";
+        var message = getName(message);
+        var token = getName2(token);
+        //var userName = YouWrote;
+        //var password = YouWrote2;
+        auth(messageType, message, token);
+    });
+
+
+
+    function auth(messageType, message, token) {
+        $.ajax({
+            type: "POST",
+            //SEND TO SERVER URL
+            url: "https://api.ubertech.io/v1/register",
+            dataType: 'json',
+            async: false,
+            data: '{"messageType": "' + messageType + '",
+            "Message": "' + message + '",
+            "Token" : "' + token + '"}',
+        error: function (xhr, error) {
+            alert('Error!');
+        },
+        success: function (data, textStatus, jqXHR) {
+            $('#response').html(data.details + '\nHello ' +
+                    data.clientInfo.message + ' ' +
+                    data.clientInfo.token + '. \nBalance:' +
+                    data.clientInfo.balance);
+        }
+    })
+    }
+</script>
 
 </body>
 </html>
