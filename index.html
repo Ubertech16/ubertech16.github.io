@@ -437,6 +437,8 @@
         </div>
     </aside>-->
 
+    <div class="share-link"></div>`
+
     <!-- Contact Details-->
     <section id="contact" class="section" style="margin-top: 50px">
         <div class="container">
@@ -914,7 +916,7 @@
                 <h4 class="modal-title" id="myModalLabel">Registration Form</h4>
             </div>
             <div class="modal-body">
-                <form action="https://api.ubertech.io/v1/register" method="post">
+                <form action="https://api.ubertech.io/v1/register" id="encodeID" method="post">
                     <input type="text" class="form-control" name="name" placeholder="Name" title="Name" required/><br>
                     <input type="text" class="form-control" name="regId" placeholder="Registration Number"
                            title="Registration Number" required/><br>
@@ -960,7 +962,7 @@
                         </div>
                     </div>
                     <br>
-                    <input type="submit" href="#"  class="btn btn-primary" name="btn_log" value="Register"/>
+                    <input type="submit" href="#"  id="click" class="btn btn-primary" name="btn_log" value="Register"/>
                 </form>
             </div>
         </div>
@@ -1107,6 +1109,23 @@
         });
     });
 </script>-->
+
+<script>
+    $(document).ready(function(){
+        $('#click').click(function(){
+            var dataString = $("#encodeID").val();
+            $.ajax({
+                type: "POST",
+                url: 'https://api.ubertech.io/v1/register' + dataString ,
+                data: dataString,
+                success: function (data) {
+                    $(".share-link").html(data);
+                }
+            });
+        });
+    });
+
+</script>
 
 
 </body>
