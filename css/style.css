@@ -420,7 +420,7 @@ img {
 /* Footer */
 #footer {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#555b60+0,727a80+25,727a80+75,555b60+100 */
-    background: #2c3e50; /* Old browsers */
+    background: #FF5A5F; /* Old browsers #2c3e50*/
     color: #c9cbce;
     padding: 15px 0 10px 0;
 }
@@ -428,7 +428,7 @@ img {
 #footer p {
     font-size: 13px;
     margin-top: 10px;
-    color: #c9cbce;
+    color: #ffffff;/*#c9cbce*/
 }
 /* Footer ends */
 
