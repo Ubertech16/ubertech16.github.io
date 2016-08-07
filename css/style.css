@@ -69,10 +69,10 @@
 
 @media only screen and (min-width:1024px) {
     .cd-top {
-        height: 60px;
-        width: 60px;
-        right: 15px;
-        bottom: 80px
+        height: 50px;
+        width: 50px;
+        right: 5px;
+        bottom: 20px
     }
 }
 /* Page to top end */
