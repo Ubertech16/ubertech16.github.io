@@ -133,7 +133,7 @@
         }
 
         .header__container h2 {
-            font-size: 28px; /*90*//*30*/
+            font-size: 26px; /*90*//*30*/
             letter-spacing: 0.025em;
 
         }
@@ -344,13 +344,17 @@
             <div class="row text-center">
                 <div>
                     <div class="flex-container-contact">
-                        <div class="col-md-6 text-center">
+                        <div class="col-md-4 text-center">
                             <h3>Android Development </h3><br>
-                            <h3>Contact - Shai Krish | +91 8122994658</h3>
+                            <h3>Contact - Shai Krish <br> <a href="tel:+918122994658">+91 8122994658</a></h3>
                         </div>
-                        <div class="col-md-6 text-center">
+                        <div class="col-md-4 text-center">
                             <h3>White Hat Hackers Club</h3><br>
-                            <h3>Contact - Swarupa | +91 9566157106</h3>
+                            <h3>Contact - Swarupa <br> <a href="tel:+919566157106">+91 9566157106</a></h3>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <h3>Network X</h3><br>
+                            <h3>Contact - Pushpendra Tiwari <br> <a href="tel:+919094394095">+91 9094394095</a></h3>
                         </div>
                     </div>
                 </div>
@@ -438,12 +442,12 @@
     </div>
 
     <!-- Scroll to Top -->
-    <a href="#0" class="cd-top"></a>
+    <!--<a href="#0" class="cd-top"></a>-->
 
     <!-- ******FOOTER****** -->
     <div id="footer" class="text-center" style="margin-top: 50px">
         <div class="container">
-            <p>Copyright &copy; <a href="index.html"><span style="color: #2c3e50">Ubertech'16</span></a>. All rights reserved.</p>
+            <p>Copyright &copy; <a href="index.html">Ubertech'16</a>. All rights reserved.</p>
         </div>
     </div>
 
@@ -780,29 +784,47 @@
                 <hr>
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#PaperDropboxRule" data-toggle="tab">Rules</a></li>
+                    <li><a href="#PaperDropboxTopics" data-toggle="tab">Topics</a></li>
                     <li><a href="#PaperDropboxContact" data-toggle="tab">Contact</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="PaperDropboxRule"><br/>
                         <ul style="text-align:left">
-                            <li>Participants must be present at the venue 10 mins before the commencement of the event.
-                                Late comers will not be entertained.
-                            </li>
-                            <li>Participants should be dressed in formals.</li>
-                            <li>Participants may present for a total time of 10 mins. There will be a warning bell at
-                                the end of 7 mins. Exceeding time limit may lead to negative marking.
-                            </li>
-                            <li>Topic chosen must be purely 'technical' and should be yield minimum of 50 results on
-                                browsing. Topic should be belong to given Computer Science domain and should not be
-                                vague.
-                            </li>
-                            <li>There will be Question & Answer session following the presentation in which the
-                                participant is expected to answer questions posted by judges.
-                            </li>
-                            <li>Presentations aids such as powerpoint presentation is accepted. Videos, graphics or
-                                animation content should not be be present.
-                            </li>
-                            <li>Weightage is given to presentation and communication skills of participants.</li>
+                            <li>Paper should be submitted in IEEE format and the soft copy of the paper should reach the co-coordinator on or before 20th August 2016.</li>
+                            <li>Participants should also submit one soft copy and two hard copies of the paper on the day of symposium.</li>
+                            <li>College ID card and Bonafide Certificate from the institution are compulsory.</li>
+                            <li>Participants should report at least one hour before the commencement of the event.</li>
+                            <li>Each paper must include a 100 to 150 words abstract. Paper length must be less than or equal to 8 pages.</li>
+                            <li>Presentation can be done using LCD Projector.</li>
+                            <li>The time limit for paper presentation is 10 minutes— eight minutes for oral presentation and two minutes for queries.</li>
+                            <li>Selected papers will be intimated through mail on or before 22.08.16</li>
+                            <li>Send your papers to: <b style="font-family: serif">srmdropbox16@gmail.com</b></li>
+                            <li>Last Date for Submission: <b style="font-family: serif">20.08.2016</b></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="PaperDropboxTopics"><br/>
+                        <ul style="text-align:left">
+                            <li>Big Data</li>
+                            <li>Data Mining</li>
+                            <li>Artificial Intelligence</li>
+                            <li>Virtual Reality</li>
+                            <li>Bio Informatics</li>
+                            <li>Soft Computing</li>
+                            <li>Cyber Crime and Information Security</li>
+                            <li>Nano Computing</li>
+                            <li>Cloud Computing</li>
+                            <li>Mobile Computing</li>
+                            <li>Multimedia</li>
+                            <li>Internet of Things</li>
+                            <li>Medical Image Processing</li>
+                            <li>Quantum Computation</li>
+                            <li>Machine Learning</li>
+                            <li>Genetic Algorithm</li>
+                            <li>Human Computer Interface</li>
+                            <li>Microcontroller for Intelligent System</li>
+                            <li>Robotics and Mobile Machines</li>
+                            <li>Cryptography</li>
+                            <li>Android Security</li>
                         </ul>
                     </div>
                     <div class="tab-pane" id="PaperDropboxContact" align="center" style="padding:20px;">
@@ -920,132 +942,6 @@
 
 <!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
 <script data-align="left" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#607D8B" data-apps="JTdCJTIydHdpdHRlciUyMjolMjJAU1JNVWJlcnRlY2glMjIsJTIyd2hhdHNhcHAlMjI6JTIyKzkxNzI5OTk3ODI2OCUyMiwlMjJzbXMlMjI6JTIyKzkxODE0NDQ4MDcwNiUyMiwlMjJwaG9uZSUyMjolMjIrOTE4MTQ0NDgwNzA2JTIyLCUyMmZhY2Vib29rJTIyOiUyMmh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9ldmVudHMvMTc4NzA5MjY1MTU3NzI4NS8lMjIsJTIyZW1haWwlMjI6JTIydWJlcnRlY2gyazE2QGdtYWlsLmNvbSUyMiU3RA=="></script>
-
-<!--<script>
-    $(document).ready(function () {
-        $('#get-data').click(function () {
-            var showData = $('#show-data');
-
-            $.getJSON('example.json', function (data) {
-                console.log(data);
-
-                var items = data.items.map(function (item) {
-                    return item.key + ': ' + item.value;
-                });
-
-                showData.empty();
-
-                if (items.length) {
-                    var content = '<li>' + items.join('</li><li>') + '</li>';
-                    var list = $('<ul />').html(content);
-                    showData.append(list);
-                }
-            });
-
-            showData.text('Loading the JSON file.');
-        });
-    });
-</script>
-
-<script>
-    $('#get-data').click(function () {
-        $.getJSON('example.json', function (data) {
-            console.log(data);
-        });
-    });
-</script>-->
-
-<!--<script>
-    $('#get-data').click(function () {
-        $.ajax({
-            type: "POST",
-            url: "https://api.ubertech.io/v1/register",
-            data:JSON.stringify({"g":"jh"}),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function(data){ console.log(data.data);
-            },
-            failure: function(errMsg) {
-                console.log(errMsg);
-            }
-        });
-    });
-</script>-->
-
-<!--<script>
-    function send() {
-        //alert("Hello World");
-        $.ajax
-        ({
-            type: "post",
-            url: "https://api.ubertech.io/v1/register",
-            dataType: "json",
-            contentType: "application/json; charset=UTF-8",
-            data: JSON.stringify({name: "Dennis", year: {college: "Dub", email: "IE"}})
-        }).done(function (data) {
-            alert("ajax callback response:" + data);
-        });
-    }
-</script>-->
-
-<!--<script type="text/javascript">
-    $(function(){
-        $('#select_link').click(function(e){
-            e.preventDefault();
-            console.log('select_link clicked');
-
-            /*$.ajax({
-             dataType: 'jsonp',
-             data: "data=yeah",
-             jsonp: 'callback',
-             url: 'http://localhost:3000/endpoint?callback=?',
-             success: function(data) {
-             console.log('success');
-             console.log(JSON.stringify(data));
-             }
-             });*/
-            var data = {};
-            data.title = "title";
-            data.message = "message";
-
-            $.ajax({
-                type: 'POST',
-                data: JSON.stringify(data),
-                contentType: 'application/json',
-                url: 'https://api.ubertech.io/v1/register',
-                success: function(data) {
-                    console.log('success');
-                    console.log(JSON.stringify(data));
-                }
-            });
-            /*$.ajax('http://localhost:3000/endpoint', {
-             type: 'POST',
-             data: JSON.stringify(data),
-             contentType: 'application/json',
-             success: function() { console.log('success');},
-             error  : function() { console.log('error');}
-             });*/
-        });
-    });
-</script>-->
-
-<!--<script>
-    $(document).ready(function(){
-        $('#click').click(function(){
-            var dataString = $("#encodeID").val();
-            $.ajax({
-                type: "POST",
-                url: 'https://api.ubertech.io/v1/register' + dataString ,
-                data: dataString,
-                success: function (data) {
-                    $(".share-link").html(data);
-                }
-            });
-        });
-    });
-
-</script>-->
-
 
 </body>
 </html>

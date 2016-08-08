@@ -1,6 +1,6 @@
 /* Making background image android */
 .white {
-    background-image: url("../Img/Android.png");
+    /*background-image: url("../Img/Android.png");*/
     margin-top: -20px;
 }
 /* Making backhround image android end */
@@ -420,7 +420,7 @@ img {
 /* Footer */
 #footer {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#555b60+0,727a80+25,727a80+75,555b60+100 */
-    background: #FF5A5F; /* Old browsers #2c3e50*/
+    background: #2c3e50; /* Old browsers #2c3e50*/
     color: #c9cbce;
     padding: 15px 0 10px 0;
 }
