@@ -195,9 +195,6 @@
             <h2 class="ubertech" style="color: #ffffff;font-size: 40px;">Übertech'16</h2>
             <h2>A National Level Technical Symposium</h2>
             <h2 style="color: #ffffff">26<sup>th</sup> & 27<sup>th</sup> August 2016</h2>
-            <div id="buttons">
-                <a href="#" class="btnn blue" data-toggle="modal" data-target="#error"><span class="underline" style="color: #ffffff;">Register</span></a>
-            </div>
         </header>
     </div>
 </div>
@@ -214,20 +211,6 @@
                 <li><a href="index.html" style="color: #ffffff">Homepage</a></li>
             </ul>
         </nav>
-    </div>
-
-    <!-- About -->
-    <section id="about" class="section why" style="padding: 80px;">
-        <div class="container">
-            <h2>Registration unsuccessful. You have registered already or check your details.</h2>
-        </div>
-    </section>
-
-    <!-- ******FOOTER****** -->
-    <div id="footer" class="text-center" style="margin-top: 50px">
-        <div class="container">
-            <p>Copyright &copy; <a href="index.html">Ubertech'16</a>. All rights reserved.</p>
-        </div>
     </div>
 
 </div>
@@ -252,6 +235,47 @@
 <script src="js/custom.js"></script>
 <script src="js/particle.js"></script>
 <script src="js/fixednav.js"></script>
+
+<script type='text/javascript'>
+    (function() {
+        'use strict';
+        function remoteModal(idModal){
+            var vm = this;
+            vm.modal = $(idModal);
+
+            if( vm.modal.length == 0 ) {
+                return false;
+            }
+
+            if( window.location.hash == idModal ){
+                openModal();
+            }
+
+            var services = {
+                open: openModal,
+                close: closeModal
+            };
+
+            return services;
+            ///////////////
+
+            // method to open modal
+            function openModal(){
+                vm.modal.modal('show');
+            }
+
+            // method to close modal
+            function closeModal(){
+                vm.modal.modal('hide');
+            }
+        }
+        Window.prototype.remoteModal = remoteModal;
+    })();
+
+    $(function(){
+        window.remoteModal('#error');
+    });
+</script>
 
 <!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
 <script data-align="left" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#607D8B" data-apps="JTdCJTIydHdpdHRlciUyMjolMjJAU1JNVWJlcnRlY2glMjIsJTIyd2hhdHNhcHAlMjI6JTIyKzkxNzI5OTk3ODI2OCUyMiwlMjJzbXMlMjI6JTIyKzkxODE0NDQ4MDcwNiUyMiwlMjJwaG9uZSUyMjolMjIrOTE4MTQ0NDgwNzA2JTIyLCUyMmZhY2Vib29rJTIyOiUyMmh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9ldmVudHMvMTc4NzA5MjY1MTU3NzI4NS8lMjIsJTIyZW1haWwlMjI6JTIydWJlcnRlY2gyazE2QGdtYWlsLmNvbSUyMiU3RA=="></script>
