@@ -1,4 +1,4 @@
-<!-- Developed By Ritesh Hota, Abhishek Dabholkar, Shai Krish & Vishal Parameswaran  | DesignX Club -->
+<!-- Developed By Ritesh Hota, Abhishek Dabholkar, Shai Krish & Vishal Parameswaran | DesignX Club -->
 <!DOCTYPE html>
 <html lang="en-us" itemscope itemtype="http://schema.org/Article">
 <head>
@@ -74,6 +74,19 @@
         }
         body {
             overflow-x: hidden;
+        }
+        @media (min-width: 767px) {
+           .ace{
+               width:150px;
+           }
+        }
+        @media (min-width: 1200px) {
+            .ace{
+                width:180px;
+            }
+        }
+        .center-block {
+            padding-bottom: 20px;
         }
     </style>
 
@@ -193,8 +206,8 @@
     <div id="particles-js" style="margin-top: -50px"></div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <div id="header">
-        <img src="Img/Ace_Logo.png" width="180px" style="float: left;position: relative;margin-top: -35px">
-        <img src="Img/Srm_Logo.png" width="80px" style="float: right;position: relative;margin-left: 40px;margin-top: -35px">
+        <img src="Img/Ace_Logo.png" width="130px" class="ace" style="float: left;position: relative;margin-top: -35px">
+        <img src="Img/SRM_Logo.png" width="130px" class="ace" style="float: right;position: relative;margin-left: 40px;margin-top: -35px">
         <header class="header__container" >
             <h2 class="first">SRM University, Vadapalani </h2>
             <h2>Department of Computer Science</h2>
@@ -371,6 +384,39 @@
         </div>
     </section>
 
+    <!-- Sponsors -->
+    <section class="success" id="sponsers" style="margin-top: 50px">
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <span style="font-size:24px">Sponsors</span></div><br><br>
+                <hr width="200px">
+                <div class="flex-container">
+                    <div class="col-sm-4" style="padding:20px;">
+                        <a href="https://www.youtube.com/user/EnnaDaRascalas" target="_blank"><img src="Img/Sponsors/Rascalas.jpg" class="img-responsive center-block" alt="Rascalas" width="50%"></a>
+                        <h4>Entertainment Partners</h4>
+                    </div>
+                    <div class="col-sm-4" style="padding:20px;">
+                        <a href="https://www.facebook.com/Blur.at.Sathyam/" target="_blank"><img src="Img/Sponsors/Blur.jpg" class="img-responsive center-block" alt="Blur" width="55%"></a>
+                        <h4>Gaming Partners</h4>
+                    </div>
+                    <div class="col-sm-4" style="padding:20px;margin-top: 50px">
+                        <a href="http://www.gamestheshop.com/" target="_blank"><img src="Img/Sponsors/Gamestheshop.png" class="img-responsive center-block" alt="Gamestheshop"></a>
+                        <h4>Gaming Partners</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="flex-container">
+                    <div class="col-sm-4" style="padding:20px;">
+                        <a href="http://www.chennaiyil.com/" target="_blank"><img src="Img/Sponsors/Chennaiyil.png" class="img-responsive center-block" alt="Chennaiyil" width="50%"></a>
+                        <h4 style="margin-top: -50px">Entertainment Partners</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
     <!-- Contact Details-->
     <section id="contact" class="section" style="margin-top: 50px">
         <div class="container">
@@ -431,7 +477,7 @@
             <div class="col-md-12 text-center" style="padding:50px;">
                 <br/>
                 <br/>
-                <span class="intro">For any queries email us at <a href="mailto:ubertech2k16@gmail.com">ubertech2k16@gmail.com</a></span>
+                <span class="intro">For any queries email us at <a href="mailto:contact@ubertech.io">contact@ubertech.io</a></span>
             </div>
         </div>
     </section>
@@ -606,7 +652,7 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="BugBusterRules"><br/>
                         <ul style="text-align:left">
-                            <li>Two member per team.</li>
+                            <li>Single member. No Teams.</li>
                             <li>Consists of two rounds.</li>
                             <li>Eliminator: You'll be given a set of question. First 10 teams to arrive with the correct
                                 answers proceeds to the next round.
@@ -618,7 +664,7 @@
                                 paper
                             </li>
                             <li> Team that didn't comply with the above rules shall be disqualified.</li>
-
+                            <li>Languages allowed are C,C++ and Java</li>
                         </ul>
                     </div>
                     <div class="tab-pane" id="BugBusterContact" align="center" style="padding:20px;">
@@ -786,7 +832,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h2>Paper Dropbox</h2>
-                Dates : 26<sup>th</sup> & 27<sup>th</sup> August 2016<br/>
+                Date : 26<sup>th</sup> August 2016<br/>
                 <hr>
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#PaperDropboxRule" data-toggle="tab">Rules</a></li>
@@ -803,7 +849,7 @@
                             <li>Each paper must include a 100 to 150 words abstract. Paper length must be less than or equal to 8 pages.</li>
                             <li>Presentation can be done using LCD Projector.</li>
                             <li>The time limit for paper presentation is 10 minutes— eight minutes for oral presentation and two minutes for queries.</li>
-                            <li>Selected papers will be intimated through mail on or before 22.08.16</li>
+                            <li>Selected papers will be intimated through mail on or before 23.08.16</li>
                             <li>Send your papers to: <b style="font-family: serif">srmdropbox16@gmail.com</b></li>
                             <li>Last Date for Submission: <b style="font-family: serif">20.08.2016</b></li>
                         </ul>
@@ -829,8 +875,8 @@
                             <li>Human Computer Interface</li>
                             <li>Microcontroller for Intelligent System</li>
                             <li>Robotics and Mobile Machines</li>
-                            <li>Cryptography</li>
-                            <li>Android Security</li>
+                            <li>Cryptography & Network Security</li>
+                            <li>Ethical Hacking</li>
                         </ul>
                     </div>
                     <div class="tab-pane" id="PaperDropboxContact" align="center" style="padding:20px;">
@@ -839,8 +885,8 @@
                         <span class="title"><b>Rubeena</b></span><br/>
                         <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9962176462</span><br/><br/>
                         <i class="fa fa-user fa-2x"></i>&nbsp;
-                        <span class="title"><b>Priyanka</b></span><br/>
-                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9952029943</span><br/><br/>
+                        <span class="title"><b>Shruthi Balaji</b></span><br/>
+                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 7299755905</span><br/><br/>
                     </div>
                     <br/>
                     <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
@@ -1057,7 +1103,7 @@
 </script>
 
 <!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
-<script data-align="left" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#607D8B" data-apps="JTdCJTIydHdpdHRlciUyMjolMjJAU1JNVWJlcnRlY2glMjIsJTIyd2hhdHNhcHAlMjI6JTIyKzkxNzI5OTk3ODI2OCUyMiwlMjJzbXMlMjI6JTIyKzkxODE0NDQ4MDcwNiUyMiwlMjJwaG9uZSUyMjolMjIrOTE4MTQ0NDgwNzA2JTIyLCUyMmZhY2Vib29rJTIyOiUyMmh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9ldmVudHMvMTc4NzA5MjY1MTU3NzI4NS8lMjIsJTIyZW1haWwlMjI6JTIydWJlcnRlY2gyazE2QGdtYWlsLmNvbSUyMiU3RA=="></script>
+<script data-align="left" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#2c3e50" data-apps="JTdCJTIydHdpdHRlciUyMjolMjJAU1JNVWJlcnRlY2glMjIsJTIyd2hhdHNhcHAlMjI6JTIyKzkxNzI5OTk3ODI2OCUyMiwlMjJzbXMlMjI6JTIyKzkxODE0NDQ4MDcwNiUyMiwlMjJwaG9uZSUyMjolMjIrOTE4MTQ0NDgwNzA2JTIyLCUyMmZhY2Vib29rJTIyOiUyMnNybXViZXJ0ZWNoJTIyLCUyMmVtYWlsJTIyOiUyMmNvbnRhY3RAdWJlcnRlY2guaW8lMjIlN0Q="></script>
 
 </body>
 </html>
