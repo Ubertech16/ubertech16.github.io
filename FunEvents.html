@@ -86,6 +86,10 @@
                 width:180px;
             }
         }
+        a:hover, a:focus {
+            text-decoration: none;
+            color: #ffffff;
+        }
     </style>
 
     <style>
@@ -179,10 +183,17 @@
     </style>
 
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-82058684-1', 'auto');
         ga('send', 'pageview');
@@ -225,7 +236,6 @@
 <div class="white" style="background-color: #ffffff;margin-top: -80px">
 
     <!-- Fixed Navigation -->
-
     <div id="cd-nav">
         <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
 
@@ -445,9 +455,6 @@
                     </div>
                     <div class="tab-pane" id="TreasureHuntContact" align="center" style="padding:20px;">
                         <h4>Event Co-Ordinators</h4><br/>
-                        <i class="fa fa-user fa-2x"></i>&nbsp;
-                        <span class="title"><b>Taran</b></span><br/>
-                        <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 72999786268</span><br/><br/>
                         <i class="fa fa-user fa-2x"></i>&nbsp;
                         <span class="title"><b>Lavanya Balaji</b></span><br/>
                         <i class="fa fa-mobile fa-2x"></i>&nbsp;<span class="title">+91 9962121091</span><br/><br/>
@@ -724,6 +731,11 @@
                         <div class="col-md-3">
                             <input type="checkbox" name="events[]" value="Paper_Dropbox"> Paper Dropbox
                         </div>
+                        <div class="col-md-3">
+                            <input type="checkbox" name="events[]" value="Fun_Events"> Fun Events
+                        </div>
+                        <br><br><br>
+                        <div class="g-recaptcha" data-sitekey="6LcFUycTAAAAAETrfDZT6wJQ19C7lCS5-rWzmBZk" style="margin-left:15px"></div>
                     </div>
                     <br>
                     <input type="submit" href="#" class="btn btn-primary" name="btn_log" value="Register"/>
@@ -766,6 +778,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/flipclock.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript">
     var clock;
 
@@ -871,6 +884,47 @@
 
     $(function(){
         window.remoteModal('#error');
+    });
+</script>
+
+<script type='text/javascript'>
+    (function() {
+        'use strict';
+        function remoteModal(idModal){
+            var vm = this;
+            vm.modal = $(idModal);
+
+            if( vm.modal.length == 0 ) {
+                return false;
+            }
+
+            if( window.location.hash == idModal ){
+                openModal();
+            }
+
+            var services = {
+                open: openModal,
+                close: closeModal
+            };
+
+            return services;
+            ///////////////
+
+            // method to open modal
+            function openModal(){
+                vm.modal.modal('show');
+            }
+
+            // method to close modal
+            function closeModal(){
+                vm.modal.modal('hide');
+            }
+        }
+        Window.prototype.remoteModal = remoteModal;
+    })();
+
+    $(function(){
+        window.remoteModal('#RegForm');
     });
 </script>
 
