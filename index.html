@@ -1101,6 +1101,47 @@
     });
 </script>
 
+<script type='text/javascript'>
+    (function() {
+        'use strict';
+        function remoteModal(idModal){
+            var vm = this;
+            vm.modal = $(idModal);
+
+            if( vm.modal.length == 0 ) {
+                return false;
+            }
+
+            if( window.location.hash == idModal ){
+                openModal();
+            }
+
+            var services = {
+                open: openModal,
+                close: closeModal
+            };
+
+            return services;
+            ///////////////
+
+            // method to open modal
+            function openModal(){
+                vm.modal.modal('show');
+            }
+
+            // method to close modal
+            function closeModal(){
+                vm.modal.modal('hide');
+            }
+        }
+        Window.prototype.remoteModal = remoteModal;
+    })();
+
+    $(function(){
+        window.remoteModal('#RegForm');
+    });
+</script>
+
 <!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
 <script data-align="left" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#5d8081" data-apps="JTdCJTIydHdpdHRlciUyMjolMjJAU1JNVWJlcnRlY2glMjIsJTIyd2hhdHNhcHAlMjI6JTIyKzkxNzI5OTk3ODI2OCUyMiwlMjJzbXMlMjI6JTIyKzkxODE0NDQ4MDcwNiUyMiwlMjJwaG9uZSUyMjolMjIrOTE4MTQ0NDgwNzA2JTIyLCUyMmZhY2Vib29rJTIyOiUyMnNybXViZXJ0ZWNoJTIyLCUyMmVtYWlsJTIyOiUyMmNvbnRhY3RAdWJlcnRlY2guaW8lMjIlN0Q="></script>
 
