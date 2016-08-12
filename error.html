@@ -1,0 +1,284 @@
+<!-- Developed By Ritesh Hota, Abhishek Dabholkar, Shai Krish & Vishal Parameswaran  | DesignX Club -->
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#9ec5de">
+    <meta name="keywords" content="SRM, VDP, College, University, Technical, CSE, National, Technical, Symposium" >
+    <meta name="description" content="SRM University - Vadapalani, Department of CSE presents Übertech'16, a National Level Technical Symposium!">
+    <link rel="canonical" href="https://www.ubertech.io/">
+
+    <link rel="shortcut icon" href="Img/Favicon.jpg" type="image/x-icon" sizes="256x256">
+    <link rel="icon" href="Img/Favicon.jpg" type="image/x-icon">
+
+    <meta name="robots" content="index, follow">
+    <!--FACEBOOK-->
+    <meta property="og:title" content="SRM University - Vadapalani, Department of CSE presents Übertech'16, a National Level Technical Symposium!">
+    <meta property="og:site_name" content="Ubertech'16 - A National Level Technical Symposium">
+    <meta property="og:url" content="https://www.ubertech.io/" >
+    <meta property="og:description" content="SRM University - Vadapalani, Department of CSE presents Übertech'16, a National Level Technical Symposium!" >
+    <meta property="og:image" content="http://i.imgur.com/dJ80JaJ.jpg" >
+    <meta property="fb:app_id" content="" >
+    <meta property="og:type" content="website" >
+    <meta property="og:locale" content="" >
+    <!--TWITTER-->
+    <meta property="twitter:card" content="summary" >
+    <meta property="twitter:title" content="Ubertech'16 - A National Level Technical Symposium" >
+    <meta property="twitter:description" content="SRM University - Vadapalani, Department of CSE presents Übertech'16, a National Level Technical Symposium!" >
+    <meta property="twitter:creator" content="@ritesh_hota" >
+    <meta property="twitter:url" content="https://www.ubertech.io/" >
+    <meta property="twitter:image" content="http://i.imgur.com/dJ80JaJ.jpg" >
+    <meta property="twitter:image:alt" content="" >
+    <!--GOOGLE+-->
+    <link rel="author" href="https://plus.google.com/u/0/+RiteshHota/about">
+    <link rel="publisher" href="https://plus.google.com/+SRMUbertech">
+
+    <title>Übertech'16 | A National Level Technical Symposium</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/custom.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/particlejs.css">
+    <link rel="stylesheet" href="css/fixednav.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style>
+        @font-face {
+            font-family: Presa;
+            src: url("font/presa.ultralight.otf") format("opentype");
+        }
+        @font-face {
+            font-family: gidoleregular;
+            src: url("font/Gidole-Regular.ttf") format("opentype");
+        }
+    </style>
+
+    <style>
+        h1,h2,h3,h4,h5,h6,p,a,li,ul,label,input,span{
+            font-family: 'gidoleregular';
+        }
+        .ubertech {
+            font-family: Presa,serif;
+        }
+        .header__container h2 {
+            color: #484848;
+            font-size: 10px;
+        }
+        .modal{
+            top: 30%
+        }
+    </style>
+
+    <style>
+        #particler-instance {
+            height: calc(100% - 80px);
+            height: -webkit-calc(100% - 80px);
+            height: -moz-calc(100% - 80px);
+            max-height: 100%;
+        }
+
+        html, body {
+            height: 100%;
+            /*background-color: #2c3e50;*//*Removed for new particle*/
+        }
+
+        .fill {
+            box-sizing: border-box;
+            width: 100%;
+            height: calc(100% - 80px);
+            height: -webkit-calc(100% - 80px);
+            height: -moz-calc(100% - 80px);
+        }
+
+        .navbar {
+            background-color: transparent;
+            border: transparent;
+            color: #F16664;
+            position: relative;
+            height: 10px;
+
+        }
+
+        .nav.navbar-nav li a {
+            color: #F16664;
+        }
+
+        .dropdown-menu {
+            background-color: transparent;
+            border: transparent;
+            box-shadow: none;
+        }
+
+        .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+            background-color: transparent;
+            color: white;
+        }
+
+        .header__container {
+            display: inline-block;
+            position: relative; /*added for new particle*/
+            max-width: 100%;
+            margin-top: 150px; /*200*/
+            text-align: center;
+            z-index: 1;
+            color: #F16664;
+            font-family: 'Josefin Slab', sans-serif;
+
+        }
+
+        .header__container h1 {
+            text-align: center;
+            padding-bottom: 0;
+            font-size: 17px;
+            line-height: 1em;
+        }
+
+        .header__container h2 {
+            font-size: 28px; /*90*//*30*/
+            letter-spacing: 0.025em;
+
+        }
+
+        .header__canvas {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0.75;
+            z-index: 0;
+        }
+
+        .container-fluid {
+            padding-left: 0;
+        }
+
+        #header {
+            text-align: center;
+            width: 100%;
+        }
+
+    </style>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-82058684-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<!-- Particle Header -->
+<div class="container-fluid fill header__wrapper header__wrapper--particler" style="height: 700px;">
+    <div id="particles-js" style="margin-top: -50px"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="header">
+        <img src="Img/Ace_Logo.png" width="180px" style="float: left;position: relative;margin-top: -35px">
+        <img src="Img/Srm_Logo.png" width="80px" style="float: right;position: relative;margin-left: 40px;margin-top: -35px">
+        <header class="header__container" >
+            <h2 class="first">SRM University, Vadapalani </h2>
+            <h2>Department of Computer Science</h2>
+            <h2 class="ubertech" style="color: #ffffff;font-size: 40px;">Übertech'16</h2>
+            <h2>A National Level Technical Symposium</h2>
+            <h2 style="color: #ffffff">26<sup>th</sup> & 27<sup>th</sup> August 2016</h2>
+        </header>
+    </div>
+</div>
+
+<div class="white" style="background-color: #ffffff">
+
+    <!-- Fixed Navigation -->
+
+    <div id="cd-nav">
+        <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+
+        <nav id="cd-main-nav">
+            <ul>
+                <li><a href="index.html" style="color: #ffffff">Homepage</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</div>
+
+<!-- Error Modal Pop up -->
+<div class="portfolio-modal modal fade" id="error" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4>Registration unsuccessful. You have registered already or check your details.</h4>
+                <br>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Js Scripts -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/particle.js"></script>
+<script src="js/fixednav.js"></script>
+
+<script type='text/javascript'>
+    (function() {
+        'use strict';
+        function remoteModal(idModal){
+            var vm = this;
+            vm.modal = $(idModal);
+
+            if( vm.modal.length == 0 ) {
+                return false;
+            }
+
+            if( window.location.hash == idModal ){
+                openModal();
+            }
+
+            var services = {
+                open: openModal,
+                close: closeModal
+            };
+
+            return services;
+            ///////////////
+
+            // method to open modal
+            function openModal(){
+                vm.modal.modal('show');
+            }
+
+            // method to close modal
+            function closeModal(){
+                vm.modal.modal('hide');
+            }
+        }
+        Window.prototype.remoteModal = remoteModal;
+    })();
+
+    $(function(){
+        window.remoteModal('#error');
+    });
+</script>
+
+<!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
+<script data-align="left" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#607D8B" data-apps="JTdCJTIydHdpdHRlciUyMjolMjJAU1JNVWJlcnRlY2glMjIsJTIyd2hhdHNhcHAlMjI6JTIyKzkxNzI5OTk3ODI2OCUyMiwlMjJzbXMlMjI6JTIyKzkxODE0NDQ4MDcwNiUyMiwlMjJwaG9uZSUyMjolMjIrOTE4MTQ0NDgwNzA2JTIyLCUyMmZhY2Vib29rJTIyOiUyMmh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9ldmVudHMvMTc4NzA5MjY1MTU3NzI4NS8lMjIsJTIyZW1haWwlMjI6JTIydWJlcnRlY2gyazE2QGdtYWlsLmNvbSUyMiU3RA=="></script>
+
+</body>
+</html>
