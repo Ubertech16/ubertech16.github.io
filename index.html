@@ -294,6 +294,7 @@
     </div>
   </section>
 
+
   <!-- New Events -->
   <section id="portfolio">
     <div class="container">
@@ -1044,9 +1045,25 @@
                       /><br>
                       <input type="text" class="form-control" name="contact" placeholder="Contact Number" title="Phone Number with a pattern 0-9" minlength="10" maxlength="10" pattern="[0-9]{10}" required
                       /><br>
-                      <input type="text" class="form-control" name="department" placeholder="Department"
+                      <select class="form-control" id="department" required>
+                          <option value="" disabled selected>Select your Department</option>
+                          <option value="CSE">Computer Science</option>
+                          <option value="ECE">Electronics &amp; Communication</option>
+                          <option value="EEE">Electrical &amp; Electronics</option>
+                          <option value="IT">Information Technology</option>
+                          <option value="Mech">Mechanical</option>
+                          <option value="Other">Other</option>
+                      </select></br>
+                      <select class="form-control" id="year" required>
+                          <option value="" disabled selected>Select your Year</option>
+                          <option value="I">First Year</option>
+                          <option value="II">Second Year</option>
+                          <option value="III">Third Year</option>
+                          <option value="IV">Fourth Year</option>
+                      </select></br>
+                      <!--<input type="text" class="form-control" name="department" placeholder="Department"
                       title="Department" required/><br>
-                      <input type="text" class="form-control" name="year" placeholder="Year" title="Year" required/><br>
+                      <input type="text" class="form-control" name="year" placeholder="Year" title="Year" required/><br>-->
                       <input type="text" class="form-control" name="college" placeholder="College" title="College Name"
                       required
                       /><br>
